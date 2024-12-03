@@ -1,4 +1,23 @@
+import { useContext } from "react";
+import { AuthContext } from "../Providers/Contexts";
+import { FcGoogle } from "react-icons/fc";
+
 const Login = () => {
+  const { signInWithEmail, signInWithGmail } = useContext(AuthContext);
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value.trim();
+    const password = form.password.value.trim();
+    signInWithEmail(email, password)
+      .then((p) => {
+        console.log(p.user);
+        // ...
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -10,8 +29,8 @@ const Login = () => {
             a id nisi.
           </p>
         </div>
-        <div className="card w-full max-w-sm shrink-0 bg-base-100 shadow-2xl">
-          <form className="card-body">
+        <div className="card w-full max-w-sm shrink-0 bg-base-100 py-10 shadow-2xl">
+          <form className="card-body py-0" onSubmit={handleSignIn}>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -19,6 +38,7 @@ const Login = () => {
               <input
                 type="email"
                 placeholder="email"
+                name="email"
                 className="input input-bordered"
                 required
               />
@@ -30,19 +50,29 @@ const Login = () => {
               <input
                 type="password"
                 placeholder="password"
+                name="password"
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a href="#" className="link-hover link label-text-alt">
-                  Forgot password?
-                </a>
-              </label>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
+          <div className="flex flex-col items-center">
+            <p className="my-3">Or</p>
+            <button
+              className="flex items-center gap-2 rounded-full border border-blue-800 px-4 py-2 text-blue-800"
+              onClick={() => {
+                signInWithGmail()
+                  .then((u) => console.log(u))
+                  .catch((err) => console.log(err));
+              }}
+            >
+              <FcGoogle size={20} />
+              <p className="text-lg">Login With Google</p>
+            </button>
+          </div>
         </div>
       </div>
     </div>

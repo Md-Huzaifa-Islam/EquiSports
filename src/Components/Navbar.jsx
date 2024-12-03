@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/Contexts";
 
 const Navbar = () => {
-  const [user, setUser] = useState(false);
+  const { signout, user } = useContext(AuthContext);
   const links = (
     <>
       <li>
@@ -20,6 +21,16 @@ const Navbar = () => {
       </li>
     </>
   );
+  const handleSignOut = () => {
+    signout()
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log(error);
+      });
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -47,12 +58,28 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">EquiSports</a>
+        <Link to={"/"} className="btn btn-ghost text-xl">
+          EquiSports
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      {user || (
+      {user?.email ? (
+        <div className="navbar-end gap-4">
+          <div
+            className="avatar tooltip tooltip-bottom"
+            data-tip={user?.displayName}
+          >
+            <div className="w-10 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
+              <img src={user?.photoURL} />
+            </div>
+          </div>
+          <button className="btn" onClick={handleSignOut}>
+            Sign Out
+          </button>
+        </div>
+      ) : (
         <div className="navbar-end gap-4">
           <Link to={"/login"} className="btn">
             Login
@@ -60,16 +87,6 @@ const Navbar = () => {
           <Link to={"/register"} className="btn">
             Register
           </Link>
-        </div>
-      )}
-      {user && (
-        <div className="navbar-end gap-4">
-          <div className="avatar">
-            <div className="w-10 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
-              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-            </div>
-          </div>
-          <button className="btn">Sign Out</button>
         </div>
       )}
     </div>

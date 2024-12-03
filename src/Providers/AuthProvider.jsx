@@ -6,6 +6,8 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
+  updateProfile,
 } from "firebase/auth";
 import PropTypes from "prop-types";
 import { auth } from "../Firebase/Firebase_config";
@@ -24,14 +26,27 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const updateNameAndPhoto = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
+
   //   signIn with Gmail
   const signInWithGmail = () => {
     return signInWithPopup(auth, provider);
   };
 
+  //   sign out
+  const signout = () => {
+    return signOut(auth);
+  };
+
   // Observer
   useEffect(() => {
     const disconnect = onAuthStateChanged(auth, (user) => {
+      console.log(user);
       setUser(user);
       setLoading(false);
     });
@@ -46,6 +61,8 @@ const AuthProvider = ({ children }) => {
     signInWithEmail,
     signUpWithEmail,
     signInWithGmail,
+    updateNameAndPhoto,
+    signout,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
