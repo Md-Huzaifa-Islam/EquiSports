@@ -9,6 +9,7 @@ import AddEquipment from "./Components/AddEquipment";
 import Detail from "./Components/Detail";
 import MyEquipments from "./Components/MyEquipments";
 import UpdateEquipment from "./Components/UpdateEquipment";
+import PrivateRoute from "./Providers/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -33,19 +34,35 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addequipments",
-        element: <AddEquipment></AddEquipment>,
+        element: (
+          <PrivateRoute>
+            <AddEquipment></AddEquipment>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/detail/:id",
-        element: <Detail></Detail>,
+        element: (
+          <PrivateRoute>
+            <Detail></Detail>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myequipments",
-        element: <MyEquipments></MyEquipments>,
+        element: (
+          <PrivateRoute>
+            <MyEquipments></MyEquipments>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update/:id",
-        element: <UpdateEquipment></UpdateEquipment>,
+        element: (
+          <PrivateRoute>
+            <UpdateEquipment></UpdateEquipment>
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -9,16 +9,19 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-
       <li>
         <NavLink to={"/allequipments"}>All Sports Equipment</NavLink>
       </li>
-      <li>
-        <NavLink to={"/addequipments"}>Add Equipment</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/myequipments"}>My Equipment List</NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink to={"/addequipments"}>Add Equipment</NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink to={"/myequipments"}>My Equipment List</NavLink>
+        </li>
+      )}
     </>
   );
   const handleSignOut = () => {
