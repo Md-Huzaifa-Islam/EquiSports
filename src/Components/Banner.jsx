@@ -1,48 +1,78 @@
-const Banner = () => {
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import slider1 from "../assets/slider/carlos-felipe-ramirez-mesa-OCH9nlz0BY4-unsplash.jpg";
+import slider2 from "../assets/slider/cristina-anne-costello-QZKFRL-HBUw-unsplash.jpg";
+import slider3 from "../assets/slider/cristina-anne-costello-rank-Px49iI-unsplash.jpg";
+import slider4 from "../assets/slider/cristina-anne-costello-rKoOne_aUak-unsplash.jpg";
+import slider5 from "../assets/slider/kenny-nguy-n-CFPt2ROKv9I-unsplash.jpg";
+import slider6 from "../assets/slider/mick-haupt-0oDGkzTIlUg-unsplash.jpg";
+import slider7 from "../assets/slider/saif71-com-IHYoOsWkufQ-unsplash.jpg";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectFade, Autoplay } from "swiper/modules";
+
+export default function Banner() {
   return (
-    <div>
-      <div className="carousel w-full">
-        <div id="item1" className="carousel-item w-full">
+    <div className="">
+      <Swiper
+        spaceBetween={30}
+        effect={"fade"}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectFade, Autoplay]}
+        className="mySwiper w-full"
+      >
+        <SwiperSlide>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-            className="w-full"
+            src={slider1}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
           />
-        </div>
-        <div id="item2" className="carousel-item w-full">
+        </SwiperSlide>
+        <SwiperSlide>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-            className="w-full"
+            src={slider2}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
           />
-        </div>
-        <div id="item3" className="carousel-item w-full">
+        </SwiperSlide>
+        <SwiperSlide>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-            className="w-full"
+            src={slider3}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
           />
-        </div>
-        <div id="item4" className="carousel-item w-full">
+        </SwiperSlide>
+        <SwiperSlide>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-            className="w-full"
+            src={slider4}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
           />
-        </div>
-      </div>
-      <div className="flex w-full justify-center gap-2 py-2">
-        <a href="#item1" className="btn btn-xs">
-          1
-        </a>
-        <a href="#item2" className="btn btn-xs">
-          2
-        </a>
-        <a href="#item3" className="btn btn-xs">
-          3
-        </a>
-        <a href="#item4" className="btn btn-xs">
-          4
-        </a>
-      </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={slider5}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={slider6}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src={slider7}
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+          />
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
-};
-
-export default Banner;
+}
