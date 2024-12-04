@@ -3,29 +3,47 @@ import { AuthContext } from "../Providers/Contexts";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
+
   const handleAddItem = (e) => {
     e.preventDefault();
-    console.log("add this");
     const form = e.target;
     const name = form.name.value;
     const category = form.category.value;
     const description = form.description.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
+    const price = Number(form.price.value);
+    const rating = Number(form.rating.value);
     const customization = form.customization.value;
-    const time = form.time.value;
-    const stock = form.stock.value;
+    const time = form.time.value + " " + "days";
+    const stock = Number(form.stock.value);
+    const image = form.image.value;
     const newEquipment = {
-      name,
-      category,
+      itemName: name,
+
+      categoryName: category,
       description,
       price,
       rating,
       customization,
-      time,
-      stock,
+
+      processingTime: time,
+      stockStatus: stock,
+      image,
+      owner_name: user.displayName,
+      owner: user.email,
     };
     console.log(newEquipment);
+    fetch("http://localhost:5000/equipments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newEquipment),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        form.reset();
+      });
   };
   return (
     <div>
@@ -126,6 +144,18 @@ const AddEquipment = () => {
               type="number"
               placeholder="Stock Status"
               name="stock"
+              className="input input-bordered"
+              required
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Photo URL</span>
+            </label>
+            <input
+              type="url"
+              placeholder="Photo URL"
+              name="image"
               className="input input-bordered"
               required
             />
