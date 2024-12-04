@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/Contexts";
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { signUpWithEmail, updateNameAndPhoto, setUser, signInWithGmail } =
     useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSignUpEmail = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,6 +21,7 @@ const Register = () => {
         updateNameAndPhoto(name, photo)
           .then(() => {
             // console.log(user);
+            navigate("/");
           })
           .catch((error) => console.log(error));
       })
@@ -98,7 +101,10 @@ const Register = () => {
               className="flex items-center gap-2 rounded-full border border-blue-800 px-4 py-2 text-blue-800"
               onClick={() => {
                 signInWithGmail()
-                  .then((u) => console.log(u))
+                  .then((u) => {
+                    console.log(u);
+                    navigate("/");
+                  })
                   .catch((err) => console.log(err));
               }}
             >
