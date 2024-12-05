@@ -1,11 +1,7 @@
 import { Fade, Slide } from "react-awesome-reveal";
-import bg from "../assets/slider/footerbackground.jpg";
 const Footer = () => {
   return (
-    <footer
-      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-cover bg-center bg-no-repeat py-12 text-textLight bg-blend-overlay"
-      style={{ backgroundImage: `url(${bg})` }}
-    >
+    <footer className="border-t-2 border-white bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12 text-textLight">
       <div className="container mx-auto px-6">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
