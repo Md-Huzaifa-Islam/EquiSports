@@ -1,29 +1,39 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/Contexts";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { signout, user } = useContext(AuthContext);
   const links = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/"} className="hover:text-hovertext">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/allequipments"}>All Sports Equipment</NavLink>
+        <NavLink to={"/allequipments"} className="hover:text-hovertext">
+          All Sports Equipment
+        </NavLink>
       </li>
       {user && (
         <li>
-          <NavLink to={"/addequipments"}>Add Equipment</NavLink>
+          <NavLink to={"/addequipments"} className="hover:text-hovertext">
+            Add Equipment
+          </NavLink>
         </li>
       )}
       {user && (
         <li>
-          <NavLink to={"/myequipments"}>My Equipment List</NavLink>
+          <NavLink to={"/myequipments"} className="hover:text-hovertext">
+            My Equipment List
+          </NavLink>
         </li>
       )}
     </>
   );
+
   const handleSignOut = () => {
     signout()
       .then(() => {
@@ -34,8 +44,9 @@ const Navbar = () => {
         console.log(error);
       });
   };
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="bg-navbarbg navbar text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,7 +72,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"} className="btn btn-ghost text-xl">
+        <Link to={"/"} className="hover:text-hovertext btn btn-ghost text-xl">
           EquiSports
         </Link>
       </div>
@@ -78,16 +89,25 @@ const Navbar = () => {
               <img src={user?.photoURL} />
             </div>
           </div>
-          <button className="btn" onClick={handleSignOut}>
+          <button
+            className="hover:bg-primary-dark btn bg-primary text-white"
+            onClick={handleSignOut}
+          >
             Sign Out
           </button>
         </div>
       ) : (
         <div className="navbar-end gap-4">
-          <Link to={"/login"} className="btn">
+          <Link
+            to={"/login"}
+            className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+          >
             Login
           </Link>
-          <Link to={"/register"} className="btn">
+          <Link
+            to={"/register"}
+            className="rounded-lg bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600"
+          >
             Register
           </Link>
         </div>

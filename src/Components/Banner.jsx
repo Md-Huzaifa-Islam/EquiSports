@@ -19,7 +19,7 @@ import { EffectFade, Autoplay } from "swiper/modules";
 
 export default function Banner() {
   return (
-    <div className="">
+    <div className="relative w-full">
       <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -33,46 +33,47 @@ export default function Banner() {
         <SwiperSlide>
           <img
             src={slider1}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={slider2}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={slider3}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={slider4}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={slider5}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={slider6}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={slider7}
-            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center"
+            className="mx-auto max-h-[600px] w-full max-w-7xl rounded-xl object-cover object-center transition-transform duration-500 hover:scale-105 hover:shadow-lg"
           />
         </SwiperSlide>
       </Swiper>
+      <div className="absolute left-0 top-0 h-full w-full rounded-xl bg-black opacity-40"></div>
     </div>
   );
 }
