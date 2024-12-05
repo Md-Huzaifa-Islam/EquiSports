@@ -1,11 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
-
 const AllEquipments = () => {
   const equipments = useLoaderData();
   return (
     <div>
       {/* header line part  */}
-      <div></div>
+      <div className="mb-10 text-center">
+        <h2 className="text-4xl font-bold text-primary">
+          All Sports Equipment
+        </h2>
+        <p className="text-textDark mt-4">
+          Browse through our collection of top-rated sports equipment and find
+          the perfect gear for your game!
+        </p>
+      </div>
 
       {/* table part  */}
       <div className="overflow-x-auto">
