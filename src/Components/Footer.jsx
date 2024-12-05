@@ -1,8 +1,11 @@
 import { Fade, Slide } from "react-awesome-reveal";
-
+import bg from "../assets/slider/footerbackground.jpg";
 const Footer = () => {
   return (
-    <footer className="from-backgroundDark text-textLight bg-gradient-to-r to-black py-12">
+    <footer
+      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-cover bg-center bg-no-repeat py-12 text-textLight bg-blend-overlay"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
       <div className="container mx-auto px-6">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -27,7 +30,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="bg-backgroundLight text-textDark border-borderGray rounded-md border px-4 py-2 outline-none focus:ring focus:ring-primary"
+                  className="rounded-md border border-borderGray bg-backgroundLight px-4 py-2 text-textDark outline-none focus:ring focus:ring-primary"
                 />
                 <button
                   type="submit"
@@ -76,7 +79,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-borderGray mt-8 flex flex-col items-center justify-between border-t pt-4 md:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between border-t border-borderGray pt-4 md:flex-row">
           {/* Social Media Links */}
           <Slide direction="up">
             <ul className="flex space-x-6">

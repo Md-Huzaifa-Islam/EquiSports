@@ -47,10 +47,10 @@ const AddEquipment = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-primary to-secondary py-12">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12">
       <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl">
         <Fade cascade triggerOnce>
-          <h2 className="mb-8 text-center text-3xl font-bold text-primary">
+          <h2 className="mb-8 text-center text-3xl font-bold text-indigo-700">
             Add New Equipment
           </h2>
         </Fade>
@@ -177,7 +177,7 @@ const AddEquipment = () => {
           </div>
 
           <div className="form-control col-span-2 mt-6">
-            <button className="btn btn-primary w-full rounded-lg py-3">
+            <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg">
               Add This Equipment
             </button>
           </div>

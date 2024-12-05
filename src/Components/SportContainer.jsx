@@ -42,7 +42,7 @@ const SportContainer = () => {
       <h2 className="mb-4 text-center text-3xl font-bold text-primary">
         Sports Category
       </h2>
-      <p className="text-textLight mb-8 text-center text-opacity-70">
+      <p className="mb-8 text-center text-secondary text-opacity-70">
         Explore different sports categories and choose your favorite!
       </p>
 
@@ -76,7 +76,7 @@ const SportContainer = () => {
                 className="h-full w-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-              <h3 className="text-textLight absolute bottom-4 text-2xl font-semibold">
+              <h3 className="absolute bottom-4 text-2xl font-semibold text-textLight">
                 {category.name}
               </h3>
             </div>

@@ -205,7 +205,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="url"
-              name="image"
               defaultValue={owner_name}
               disabled
               className="input input-bordered rounded-lg"
@@ -220,7 +219,6 @@ const UpdateEquipment = () => {
               type="url"
               defaultValue={owner}
               disabled
-              name="image"
               className="input input-bordered rounded-lg"
               required
             />

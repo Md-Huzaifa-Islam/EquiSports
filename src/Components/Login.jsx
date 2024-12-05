@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-primary to-secondary">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12">
       <div className="flex w-11/12 flex-col items-center justify-between gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
@@ -40,7 +40,7 @@ const Login = () => {
             <h1 className="mb-6 text-5xl font-extrabold text-white">
               Welcome Back!
             </h1>
-            <p className="text-textLight text-lg">
+            <p className="text-lg text-textLight">
               Sign in to your account and continue your journey with us. Access
               your personalized dashboard <br /> explore sports equipment, and
               more!

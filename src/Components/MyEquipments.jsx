@@ -30,29 +30,51 @@ const MyEquipments = () => {
       {/* header section  */}
       <div></div>
       {/* main section  */}
-      <div className="">
+      <div className="grid grid-cols-3 gap-6">
         {equipments &&
           equipments.map((equipment) => (
             <div
               key={equipment._id}
-              className="card w-96 bg-base-100 shadow-xl"
+              className="card w-full bg-base-100 shadow-lg transition-shadow duration-200 hover:shadow-xl"
             >
               <figure>
-                <img src={equipment.photo} alt={equipment.itemName} />
+                <img
+                  src={equipment.image}
+                  alt={equipment.itemName}
+                  className="h-64 w-full object-cover"
+                />
               </figure>
-              <div className="card-body">
-                <h2 className="card-title">{equipment.itemName}</h2>
-                <p>{equipment.description}</p>
-                <div className="card-actions justify-center gap-4">
+              <div className="card-body p-4">
+                <h2 className="card-title text-lg font-bold">
+                  {equipment.itemName}
+                </h2>
+                <p className="text-sm text-gray-600">
+                  Price:{" "}
+                  <span className="font-semibold">${equipment.price}</span>
+                </p>
+                <p className="text-sm text-gray-600">
+                  Stock:{" "}
+                  <span className="font-semibold">
+                    {equipment.stockStatus} available
+                  </span>
+                </p>
+                <p className="text-sm text-gray-600">
+                  Rating:{" "}
+                  <span className="font-semibold">{equipment.rating} ★</span>
+                </p>
+                <div className="mt-4 flex justify-between gap-2">
+                  <button className="btn btn-outline btn-sm hover:btn-primary">
+                    Show Details
+                  </button>
                   <Link
                     to={`/update/${equipment._id}`}
-                    className="btn btn-primary"
+                    className="btn btn-outline btn-sm hover:btn-secondary"
                   >
                     Update
                   </Link>
                   <button
-                    onClick={() => handleDelete(`${equipment._id}`)}
-                    className="btn btn-primary"
+                    onClick={() => handleDelete(equipment._id)}
+                    className="btn btn-outline btn-sm hover:btn-error"
                   >
                     Delete
                   </button>
