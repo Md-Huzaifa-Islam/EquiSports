@@ -1,32 +1,68 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/Contexts";
-import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { signout, user } = useContext(AuthContext);
+  console.log(user?.photoURL);
   const links = (
     <>
       <li>
-        <NavLink to={"/"} className="hover:text-hovertext">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `relative bg-transparent transition-colors hover:text-hovertext ${
+              isActive
+                ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
+            }`
+          }
+        >
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/allequipments"} className="hover:text-hovertext">
+        <NavLink
+          to={"/allequipments"}
+          className={({ isActive }) =>
+            `relative bg-transparent transition-colors hover:text-hovertext ${
+              isActive
+                ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
+            }`
+          }
+        >
           All Sports Equipment
         </NavLink>
       </li>
       {user && (
         <li>
-          <NavLink to={"/addequipments"} className="hover:text-hovertext">
+          <NavLink
+            to={"/addequipments"}
+            className={({ isActive }) =>
+              `relative bg-transparent transition-colors hover:text-hovertext ${
+                isActive
+                  ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                  : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
+              }`
+            }
+          >
             Add Equipment
           </NavLink>
         </li>
       )}
       {user && (
         <li>
-          <NavLink to={"/myequipments"} className="hover:text-hovertext">
+          <NavLink
+            to={"/myequipments"}
+            className={({ isActive }) =>
+              `relative bg-transparent transition-colors hover:text-hovertext ${
+                isActive
+                  ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                  : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
+              }`
+            }
+          >
             My Equipment List
           </NavLink>
         </li>
@@ -46,7 +82,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-navbarbg navbar text-white">
+    <div className="navbar z-10 pt-5 text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -72,7 +108,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"} className="hover:text-hovertext btn btn-ghost text-xl">
+        <Link to={"/"} className="btn btn-ghost text-2xl hover:text-hovertext">
           EquiSports
         </Link>
       </div>

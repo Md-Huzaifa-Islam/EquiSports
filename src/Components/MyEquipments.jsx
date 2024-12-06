@@ -47,10 +47,10 @@ const MyEquipments = () => {
                 <img
                   src={equipment.image}
                   alt={equipment.itemName}
-                  className="w-full object-contain object-center"
+                  className="h-full object-contain object-center"
                 />
               </figure>
-              <div className="card-body p-4">
+              <div className="card-body p-4 px-2 pb-0">
                 <h2 className="card-title bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-clip-text text-xl font-bold text-transparent">
                   {equipment.itemName}
                 </h2>

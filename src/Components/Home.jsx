@@ -4,7 +4,7 @@ import SportContainer from "./SportContainer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       {/* banner section  */}
       <section>
         <Banner></Banner>

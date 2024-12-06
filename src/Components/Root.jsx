@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Root = () => {
   return (
-    <div className="bg-primarybg flex min-h-screen flex-col justify-between">
+    <div className="flex min-h-screen flex-col justify-between bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600">
       <div>
         <header>
           <Navbar></Navbar>

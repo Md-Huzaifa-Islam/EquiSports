@@ -11,12 +11,15 @@ const Products = () => {
   }, []);
 
   return (
-    <section className="bg-backgroundDark py-16">
+    <section
+      id="allequipments"
+      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-textLight mb-4 text-center text-3xl font-semibold">
+        <h2 className="mb-4 text-center text-4xl font-semibold text-textLight">
           Featured Sports Equipment
         </h2>
-        <p className="text-textLight mb-12 text-center text-opacity-70">
+        <p className="mb-12 text-center text-lg text-textLight text-opacity-70">
           Explore our curated selection of top-quality sports equipment,
           handpicked for enthusiasts and professionals alike.
         </p>
@@ -25,27 +28,41 @@ const Products = () => {
             products.map((product) => (
               <div
                 key={product._id}
-                className="bg-backgroundLight group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                className="card w-full max-w-md border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white"
               >
-                <img
-                  src={product.image}
-                  alt={product.itemName}
-                  className="h-48 w-full object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-textDark text-xl font-semibold">
+                <figure className="h-72 rounded-xl bg-blue-800">
+                  <img
+                    src={product.image}
+                    alt={product.itemName}
+                    className="h-full object-contain object-center"
+                  />
+                </figure>
+                <div className="card-body p-4 px-2 pb-0">
+                  <h2 className="card-title bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-clip-text text-xl font-bold text-transparent">
                     {product.itemName}
-                  </h3>
-                  <p className="text-secondary">{product.categoryName}</p>
-                  <p className="mt-2 text-lg font-semibold text-primary">
-                    ${product.price}
+                  </h2>
+                  <p className="text-base font-medium text-[#4F46E5]">
+                    Price:{" "}
+                    <span className="text-[#434C5B]">{product.price} $</span>
                   </p>
-                  <Link
-                    to={`/detail/${product._id}`}
-                    className="text-textLight mt-4 inline-block rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-2 transition-colors duration-300 hover:from-secondary hover:to-primary"
-                  >
-                    View Details
-                  </Link>
+                  <p className="text-base font-medium text-[#4F46E5]">
+                    Stock:{" "}
+                    <span className="text-[#434C5B]">
+                      {product.stockStatus} available
+                    </span>
+                  </p>
+                  <p className="text-base font-medium text-[#4F46E5]">
+                    Rating:{" "}
+                    <span className="text-[#434C5B]">{product.rating} ★</span>
+                  </p>
+                  <div className="mt-4">
+                    <Link
+                      to={`/detail/${product._id}`}
+                      className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 py-3 text-lg font-semibold text-white hover:shadow-lg"
+                    >
+                      See Details
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
