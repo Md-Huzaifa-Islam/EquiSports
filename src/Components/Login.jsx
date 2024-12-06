@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12">
+    <div className="my-16 flex items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600">
       <div className="flex w-11/12 flex-col items-center justify-between gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
@@ -51,7 +51,7 @@ const Login = () => {
         {/* Right Section */}
         <Fade cascade className="flex-grow" triggerOnce duration={800}>
           <div className="card w-full rounded-lg bg-white shadow-lg">
-            <form className="card-body" onSubmit={handleSignIn}>
+            <form className="card-body pb-0" onSubmit={handleSignIn}>
               <h2 className="text-center text-3xl font-bold text-primary">
                 Login
               </h2>
@@ -87,10 +87,10 @@ const Login = () => {
             </form>
 
             <div className="my-4 flex items-center justify-center">
-              <p className="mx-2 text-gray-500">or</p>
+              <p className="mx-2 text-xl font-bold text-primary">Or</p>
             </div>
 
-            <div className="mb-4 flex flex-col items-center">
+            <div className="mb-12 flex flex-col items-center">
               <button
                 className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
                 onClick={handleSignInWithG}

@@ -17,6 +17,9 @@ export default {
         textDark: "#2d3748",
         borderGray: "#cbd5e0",
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [daisyui],

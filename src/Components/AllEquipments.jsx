@@ -1,8 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
+import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 const AllEquipments = () => {
   const equipments = useLoaderData();
+  console.log(equipments);
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12">
       {/* header line part  */}
       <div className="mb-10 text-center text-white">
         <h2 className="text-4xl font-bold">All Sports Equipment</h2>
@@ -37,7 +40,21 @@ const AllEquipments = () => {
                   <td>{equipment.itemName}</td>
                   <td>{equipment.categoryName}</td>
                   <td>{equipment.price} $</td>
-                  <td>{equipment.rating}</td>
+                  <td className="">
+                    <div className="flex justify-center">
+                      <ReactStars
+                        value={equipment.rating}
+                        count={5}
+                        size={20}
+                        edit={false}
+                        isHalf={true}
+                        emptyIcon={<IoStarOutline />}
+                        halfIcon={<IoStarHalf />}
+                        filledIcon={<IoStar />}
+                        activeColor="#ffd700"
+                      />
+                    </div>
+                  </td>
                   <td>
                     <Link
                       to={`/detail/${equipment._id}`}

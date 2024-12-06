@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import ReactStars from "react-rating-stars-component";
+import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 const Products = () => {
   const [products, setProducts] = useState(null);
 
@@ -13,7 +14,7 @@ const Products = () => {
   return (
     <section
       id="allequipments"
-      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16"
+      className="mt-16 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16"
     >
       <div className="container mx-auto px-4">
         <h2 className="mb-4 text-center text-4xl font-semibold text-textLight">
@@ -51,10 +52,22 @@ const Products = () => {
                       {product.stockStatus} available
                     </span>
                   </p>
-                  <p className="text-base font-medium text-[#4F46E5]">
-                    Rating:{" "}
-                    <span className="text-[#434C5B]">{product.rating} ★</span>
-                  </p>
+                  <div className="flex items-center gap-2 text-base font-medium text-[#4F46E5]">
+                    <p className="flex-grow-0">Rating:</p>
+                    <span className="text-[#434C5B]">
+                      <ReactStars
+                        value={product.rating}
+                        count={5}
+                        size={20}
+                        edit={false}
+                        isHalf={true}
+                        emptyIcon={<IoStarOutline />}
+                        halfIcon={<IoStarHalf />}
+                        filledIcon={<IoStar />}
+                        activeColor="#ffd700"
+                      />
+                    </span>
+                  </div>
                   <div className="mt-4">
                     <Link
                       to={`/detail/${product._id}`}

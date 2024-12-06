@@ -14,7 +14,7 @@ const AddEquipment = () => {
     const price = Number(form.price.value);
     const rating = Number(form.rating.value);
     const customization = form.customization.value;
-    const time = form.time.value + " days";
+    const time = Number(form.time.value);
     const stock = Number(form.stock.value);
     const image = form.image.value;
     const newEquipment = {
@@ -130,7 +130,7 @@ const AddEquipment = () => {
             </label>
             <input
               type="text"
-              placeholder="Customization"
+              placeholder="Customization (Separate by comma for more than one) "
               name="customization"
               className="input input-bordered rounded-lg"
               required
@@ -139,7 +139,9 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Processing Time</span>
+              <span className="label-text text-gray-700">
+                Processing Time (Days)
+              </span>
             </label>
             <input
               type="number"

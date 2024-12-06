@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/Contexts";
 import { Link } from "react-router-dom";
-
+import ReactStars from "react-rating-stars-component";
+import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 const MyEquipments = () => {
   const { user } = useContext(AuthContext);
   const [equipments, setEquipments] = useState(null);
@@ -26,7 +27,7 @@ const MyEquipments = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-16">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-12">
       {/* header line part  */}
       <div className="mb-10 text-center text-white">
         <h2 className="text-4xl font-bold">My All Equipment</h2>
@@ -64,10 +65,22 @@ const MyEquipments = () => {
                     {equipment.stockStatus} available
                   </span>
                 </p>
-                <p className="text-base font-medium text-[#4F46E5]">
-                  Rating:{" "}
-                  <span className="text-[#434C5B]">{equipment.rating} ★</span>
-                </p>
+                <div className="flex items-center gap-2 text-base font-medium text-[#4F46E5]">
+                  <p>Rating: </p>
+                  <span className="text-[#434C5B]">
+                    <ReactStars
+                      value={equipment.rating}
+                      count={5}
+                      size={20}
+                      edit={false}
+                      isHalf={true}
+                      emptyIcon={<IoStarOutline />}
+                      halfIcon={<IoStarHalf />}
+                      filledIcon={<IoStar />}
+                      activeColor="#ffd700"
+                    />
+                  </span>
+                </div>
                 <div className="mt-4 flex justify-between gap-2">
                   <Link
                     to={`/detail/${equipment._id}`}

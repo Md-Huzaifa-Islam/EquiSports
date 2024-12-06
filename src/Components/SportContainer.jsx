@@ -7,7 +7,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 // Import required modules
-import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 const SportContainer = () => {
   const categories = [
@@ -39,10 +39,10 @@ const SportContainer = () => {
 
   return (
     <section className="my-16 px-4">
-      <h2 className="mb-4 text-center text-3xl font-bold text-primary">
+      <h2 className="mb-4 text-center text-4xl font-semibold text-white">
         Sports Category
       </h2>
-      <p className="mb-8 text-center text-secondary text-opacity-70">
+      <p className="mb-8 text-center text-lg text-white text-opacity-80">
         Explore different sports categories and choose your favorite!
       </p>
 
@@ -64,7 +64,7 @@ const SportContainer = () => {
           slideShadows: true,
         }}
         pagination={{ clickable: true }}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
+        modules={[EffectCoverflow, Autoplay]}
         className="mySwiper h-80"
       >
         {categories.map((category) => (

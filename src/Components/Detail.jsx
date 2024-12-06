@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { Fade, Zoom } from "react-awesome-reveal";
-
+import ReactStars from "react-rating-stars-component";
+import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 const Detail = () => {
   const item = useLoaderData();
 
@@ -25,7 +26,7 @@ const Detail = () => {
             <img
               src={item.image}
               alt={item.itemName}
-              className="rounded-lg shadow-md"
+              className="mx-auto w-11/12 rounded-lg shadow-md"
             />
           </Zoom>
         </div>
@@ -48,10 +49,20 @@ const Detail = () => {
               <span className="font-medium text-indigo-600">Price:</span> $
               {item.price}
             </p>
-            <p className="mb-2 text-lg text-gray-700">
+            <div className="mb-2 flex items-center gap-2 text-lg text-gray-700">
               <span className="font-medium text-indigo-600">Rating:</span>{" "}
-              {item.rating} ★
-            </p>
+              <ReactStars
+                value={item.rating || 0}
+                count={5}
+                size={20}
+                edit={false}
+                isHalf={true}
+                emptyIcon={<IoStarOutline />}
+                halfIcon={<IoStarHalf />}
+                filledIcon={<IoStar />}
+                activeColor="#ffd700"
+              />
+            </div>
             <p className="mb-2 text-lg text-gray-700">
               <span className="font-medium text-indigo-600">
                 Customization Options:
@@ -62,7 +73,7 @@ const Detail = () => {
               <span className="font-medium text-indigo-600">
                 Processing Time:
               </span>{" "}
-              {item.processingTime}
+              {item.processingTime} <span> days</span>
             </p>
             <p className="mb-2 text-lg text-gray-700">
               <span className="font-medium text-indigo-600">Stock Status:</span>{" "}

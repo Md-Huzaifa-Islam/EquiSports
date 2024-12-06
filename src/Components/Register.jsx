@@ -29,7 +29,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-primary to-secondary">
+    <div className="my-16 flex items-center justify-center">
       <div className="flex w-11/12 flex-col items-center gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
@@ -37,7 +37,7 @@ const Register = () => {
             <h1 className="mb-6 text-5xl font-extrabold text-white">
               Join Us Today!
             </h1>
-            <p className="text-textLight text-lg">
+            <p className="text-lg text-textLight">
               Register now and get access to exclusive offers, explore sports
               equipment, and much more!
             </p>
@@ -47,7 +47,7 @@ const Register = () => {
         {/* Right Section */}
         <Fade cascade className="flex-grow" triggerOnce duration={800}>
           <div className="card w-full rounded-lg bg-white p-8 shadow-lg">
-            <form className="card-body" onSubmit={handleSignUpEmail}>
+            <form className="card-body pb-0" onSubmit={handleSignUpEmail}>
               <h2 className="mb-6 text-center text-3xl font-bold text-primary">
                 Create an Account
               </h2>
@@ -112,7 +112,7 @@ const Register = () => {
             </form>
 
             <div className="my-4 flex items-center justify-center">
-              <p className="mx-2 text-gray-500">or</p>
+              <p className="mx-2 text-xl font-bold text-primary">Or</p>
             </div>
 
             <div className="mb-4 flex flex-col items-center">

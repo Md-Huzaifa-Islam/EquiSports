@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/Contexts";
-
+import { Tooltip } from "react-tooltip";
 const Navbar = () => {
   const { signout, user } = useContext(AuthContext);
   console.log(user?.photoURL);
@@ -118,13 +118,16 @@ const Navbar = () => {
       {user?.email ? (
         <div className="navbar-end gap-4">
           <div
-            className="avatar tooltip tooltip-bottom"
-            data-tip={user?.displayName}
+            className="avatar"
+            data-tooltip-content={user?.displayName}
+            data-tooltip-place="bottom"
+            data-tooltip-id="my-tooltip"
           >
             <div className="w-10 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
               <img src={user?.photoURL} />
             </div>
           </div>
+          <Tooltip id="my-tooltip" className="z-50" />
           <button
             className="hover:bg-primary-dark btn bg-primary text-white"
             onClick={handleSignOut}

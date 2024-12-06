@@ -1,16 +1,19 @@
 import { Fade, Slide } from "react-awesome-reveal";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer className="border-t-2 border-white bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12 text-textLight">
+    <footer className="mt-12 border-t-2 border-white bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12 text-textLight">
       <div className="container mx-auto px-6">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Brand Info */}
           <Fade>
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-white">EquiSports</h2>
-              <p className="text-sm text-white opacity-50">
+              <Link to={"/"} className="text-3xl font-bold text-white">
+                EquiSports
+              </Link>
+              <p className="text-sm text-white text-opacity-80">
                 EquiSports brings the best sports news, equipment, and updates
                 to your fingertips. Join our community today!
               </p>
@@ -133,7 +136,7 @@ const Footer = () => {
 
           {/* Footer Text */}
           <Fade>
-            <p className="mt-4 text-sm text-secondary md:mt-0">
+            <p className="mt-4 text-sm text-white md:mt-0">
               &copy; 2024 EquiSports. All rights reserved.
             </p>
           </Fade>
