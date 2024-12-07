@@ -67,12 +67,12 @@ export default function Banner() {
         <h1 className="text-2xl font-extrabold text-white drop-shadow-md sm:text-4xl md:text-5xl">
           Welcome to Our Sports Store!
         </h1>
-        <p className="mx-auto mt-2 w-9/12 text-sm text-gray-200 md:text-lg">
+        <p className="mx-auto mt-2 w-9/12 text-sm text-gray-200 sm:mt-4 md:text-lg">
           Explore the finest collection of premium sports equipment.
         </p>
         <a
           href="#allequipments"
-          className="mt-3 inline-block rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-3 py-1 font-semibold text-white transition-transform hover:scale-105 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3"
+          className="mt-3 inline-block rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-3 py-1 font-semibold text-white transition-transform hover:scale-105 sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3"
         >
           See more
         </a>

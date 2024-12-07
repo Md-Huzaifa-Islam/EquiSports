@@ -21,15 +21,15 @@ const UpdateEquipment = () => {
   const handleUpdatedItem = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = form.name.value;
-    const category = form.category.value;
-    const description = form.description.value;
-    const price = Number(form.price.value);
-    const rating = Number(form.rating.value);
-    const customization = form.customization.value;
-    const time = Number(form.time.value);
-    const stock = Number(form.stock.value);
-    const image = form.image.value;
+    const name = form.name.value.trim();
+    const category = form.category.value.trim();
+    const description = form.description.value.trim();
+    const price = Number(form.price.value.trim());
+    const rating = Number(form.rating.value.trim());
+    const customization = form.customization.value.trim();
+    const time = Number(form.time.value.trim());
+    const stock = Number(form.stock.value.trim());
+    const image = form.image.value.trim();
     const newEquipment = {
       itemName: name,
       categoryName: category,

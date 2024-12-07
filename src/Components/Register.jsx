@@ -16,6 +16,17 @@ const Register = () => {
     const email = form.email.value.trim();
     const photo = form.photo.value.trim();
     const password = form.password.value.trim();
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      alert("Password must contain at least one lowercase letter.");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      alert("Password must contain at least one uppercase letter.");
+      return;
+    }
+
     signUpWithEmail(email, password)
       .then((p) => {
         setUser(p.user);

@@ -18,16 +18,16 @@ const AllEquipments = () => {
       </div>
 
       {/* table part  */}
-      <div className="overflow-x-auto lg:mx-0">
+      <div className="hidden overflow-x-auto sm:block lg:mx-0">
         <table className="table mx-auto w-11/12 overflow-hidden rounded-2xl md:w-full lg:w-11/12">
           {/* head */}
           <thead className="mx-auto w-full bg-[#4338CA] text-center text-sm text-white sm:text-lg md:text-xl lg:text-2xl">
             <tr>
-              <th className="hidden sm:flex">Items</th>
+              <th className="">Items</th>
               <th>Name</th>
               <th className="px-0 sm:px-3">Category</th>
               <th className="px-0 sm:px-3">price</th>
-              <th className="hidden sm:flex">Rating</th>
+              <th className="">Rating</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -38,7 +38,7 @@ const AllEquipments = () => {
                   key={equipment._id}
                   className="hover bg-white text-center text-xs font-semibold text-black md:text-base lg:text-lg"
                 >
-                  <th className="hidden sm:block">{index + 1}</th>
+                  <td className="">{index + 1}</td>
                   <td>{equipment.itemName}</td>
                   <td className="px-1 sm:px-3">{equipment.categoryName}</td>
                   <td className="px-1 sm:px-3">
@@ -48,7 +48,7 @@ const AllEquipments = () => {
                     </div>
                   </td>
 
-                  <td className="hidden sm:flex">
+                  <td className="">
                     <div className="mx-auto flex w-max justify-center md:hidden">
                       <ReactStars
                         value={equipment.rating}
@@ -76,6 +76,49 @@ const AllEquipments = () => {
                       />
                     </div>
                   </td>
+                  <td>
+                    <Link
+                      to={`/detail/${equipment._id}`}
+                      className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-[2px] py-1 text-sm font-semibold text-white hover:shadow-lg sm:px-1 md:px-2 md:py-2 md:text-base lg:py-3 lg:text-lg"
+                    >
+                      See Details
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      {/* table part  */}
+      <div className="overflow-x-auto sm:hidden lg:mx-0">
+        <table className="table mx-auto w-11/12 overflow-hidden rounded-2xl md:w-full lg:w-11/12">
+          {/* head */}
+          <thead className="mx-auto w-full bg-[#4338CA] text-center text-sm text-white sm:text-lg md:text-xl lg:text-2xl">
+            <tr>
+              <th>Name</th>
+              <th className="px-0 sm:px-3">Category</th>
+              <th className="px-0 sm:px-3">price</th>
+
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {equipments.map((equipment) => {
+              return (
+                <tr
+                  key={equipment._id}
+                  className="hover bg-white text-center text-xs font-semibold text-black md:text-base lg:text-lg"
+                >
+                  <td>{equipment.itemName}</td>
+                  <td className="px-1 sm:px-3">{equipment.categoryName}</td>
+                  <td className="px-1 sm:px-3">
+                    <div className="flex justify-center gap-1">
+                      <p>{equipment.price}</p>
+                      <p> $</p>
+                    </div>
+                  </td>
+
                   <td>
                     <Link
                       to={`/detail/${equipment._id}`}
