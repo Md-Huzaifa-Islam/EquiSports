@@ -4,7 +4,6 @@ import { AuthContext } from "../Providers/Contexts";
 import { Tooltip } from "react-tooltip";
 const Navbar = () => {
   const { signout, user } = useContext(AuthContext);
-  console.log(user?.photoURL);
   const links = (
     <>
       <li>
