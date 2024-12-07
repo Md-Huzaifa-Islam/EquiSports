@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="">
       {/* banner section  */}
-      <section>
+      <section className="px-5">
         <Banner></Banner>
       </section>
       {/* products section  */}

@@ -6,7 +6,7 @@ const Detail = () => {
   const item = useLoaderData();
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-8">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-8">
       {/* Header Section */}
       <header className="mb-12 text-center">
         <Fade cascade triggerOnce>
@@ -26,7 +26,7 @@ const Detail = () => {
             <img
               src={item.image}
               alt={item.itemName}
-              className="mx-auto w-11/12 rounded-lg shadow-md"
+              className="mx-auto w-11/12 rounded-lg shadow-md md:max-w-64 lg:w-11/12 lg:max-w-none"
             />
           </Zoom>
         </div>
@@ -46,8 +46,8 @@ const Detail = () => {
               {item.description}
             </p>
             <p className="mb-2 text-lg text-gray-700">
-              <span className="font-medium text-indigo-600">Price:</span> $
-              {item.price}
+              <span className="font-medium text-indigo-600">Price: </span>
+              {item.price} $
             </p>
             <div className="mb-2 flex items-center gap-2 text-lg text-gray-700">
               <span className="font-medium text-indigo-600">Rating:</span>{" "}

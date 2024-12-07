@@ -47,7 +47,7 @@ const AddEquipment = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12">
+    <div className="flex items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-12">
       <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl">
         <Fade cascade triggerOnce>
           <h2 className="mb-8 text-center text-3xl font-bold text-indigo-700">

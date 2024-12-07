@@ -38,7 +38,7 @@ const SportContainer = () => {
   ];
 
   return (
-    <section className="my-16 px-4">
+    <section className="mx-auto my-16 max-w-[1500px] px-4">
       <h2 className="mb-4 text-center text-4xl font-semibold text-white">
         Sports Category
       </h2>

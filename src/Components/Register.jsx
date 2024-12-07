@@ -29,11 +29,11 @@ const Register = () => {
   };
 
   return (
-    <div className="my-16 flex items-center justify-center">
+    <div className="mx-auto my-16 flex items-center justify-center md:container">
       <div className="flex w-11/12 flex-col items-center gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
-          <div className="text-center lg:w-1/2 lg:text-left">
+          <div className="text-center md:mx-auto md:w-8/12 lg:mx-0 lg:w-1/2 lg:text-left">
             <h1 className="mb-6 text-5xl font-extrabold text-white">
               Join Us Today!
             </h1>
@@ -45,7 +45,12 @@ const Register = () => {
         </Slide>
 
         {/* Right Section */}
-        <Fade cascade className="flex-grow" triggerOnce duration={800}>
+        <Fade
+          cascade
+          className="flex-grow md:w-full md:max-w-lg lg:max-w-md"
+          triggerOnce
+          duration={800}
+        >
           <div className="card w-full rounded-lg bg-white p-8 shadow-lg">
             <form className="card-body pb-0" onSubmit={handleSignUpEmail}>
               <h2 className="mb-6 text-center text-3xl font-bold text-primary">

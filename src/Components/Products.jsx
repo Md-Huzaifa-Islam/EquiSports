@@ -24,14 +24,14 @@ const Products = () => {
           Explore our curated selection of top-quality sports equipment,
           handpicked for enthusiasts and professionals alike.
         </p>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {products &&
             products.map((product) => (
               <div
                 key={product._id}
                 className="card w-full max-w-md border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white"
               >
-                <figure className="h-72 rounded-xl bg-blue-800">
+                <figure className="h-72 rounded-xl bg-blue-800 sm:h-60 md:h-72">
                   <img
                     src={product.image}
                     alt={product.itemName}

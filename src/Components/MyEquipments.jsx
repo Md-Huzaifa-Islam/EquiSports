@@ -37,7 +37,7 @@ const MyEquipments = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 md:container md:mx-auto">
+      <div className="grid grid-cols-3 gap-6 md:container md:mx-auto md:grid-cols-2 lg:grid-cols-3">
         {equipments &&
           equipments.map((equipment) => (
             <div
