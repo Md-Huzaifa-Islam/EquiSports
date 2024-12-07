@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { toast } from "react-toastify";
 const UpdateEquipment = () => {
   const equipment = useLoaderData();
   console.log(equipment);
@@ -51,13 +52,11 @@ const UpdateEquipment = () => {
       body: JSON.stringify(newEquipment),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        alert("Equipment updated successfully");
+      .then(() => {
+        toast.success("Equipment updated successfully");
       })
       .catch((error) => {
-        console.error("Error updating equipment:", error);
-        alert("Error updating equipment, please try again.");
+        toast.error("Error updating equipment:", error);
       });
   };
 

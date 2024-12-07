@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/Contexts";
 import PrintFaq from "./Printfaq";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const FaqSection = () => {
   const { user } = useContext(AuthContext);
   const [faqs, setFaqs] = useState([]);
@@ -22,6 +23,7 @@ const FaqSection = () => {
   const handleSubmitFaq = (e) => {
     e.preventDefault();
     user || navigate("/login");
+    user || toast.info("You need to login to ask a question");
     const form = e.target;
     const faq = form.faq.value.trim();
     const newFaq = {

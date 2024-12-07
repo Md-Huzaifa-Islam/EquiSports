@@ -13,6 +13,7 @@ import { EffectFlip, Autoplay } from "swiper/modules";
 import { useContext, useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { AuthContext } from "../Providers/Contexts";
+import { toast } from "react-toastify";
 
 const CustomerReviews = () => {
   const { user } = useContext(AuthContext);
@@ -22,7 +23,7 @@ const CustomerReviews = () => {
   const [reviewForm, setReviewForm] = useState(false);
   const handleAddreview = () => {
     user || navigate("/login");
-
+    user || toast.info("You need to login to make a review");
     setReviewForm((p) => !p);
   };
   const handleSendreview = (e) => {

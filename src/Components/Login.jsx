@@ -3,6 +3,7 @@ import { AuthContext } from "../Providers/Contexts";
 import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { signInWithEmail, signInWithGmail } = useContext(AuthContext);
@@ -15,21 +16,22 @@ const Login = () => {
     const email = form.email.value.trim();
     const password = form.password.value.trim();
     if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
+      toast.error("Password must be at least 6 characters long.");
       return;
     } else if (!/[a-z]/.test(password)) {
-      alert("Password must contain at least one lowercase letter.");
+      toast.error("Password must contain at least one lowercase letter.");
       return;
     } else if (!/[A-Z]/.test(password)) {
-      alert("Password must contain at least one uppercase letter.");
+      toast.error("Password must contain at least one uppercase letter.");
       return;
     }
     signInWithEmail(email, password)
       .then(() => {
         navigate(location || "/");
+        toast.success("Welcome back !");
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.message);
       });
   };
 
@@ -37,8 +39,9 @@ const Login = () => {
     signInWithGmail()
       .then(() => {
         navigate(location || "/");
+        toast.success("Welcome back !");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error(err.message));
   };
 
   return (

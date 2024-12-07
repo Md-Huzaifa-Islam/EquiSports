@@ -4,21 +4,22 @@ import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import { useState } from "react";
 import { BiSolidDownArrowAlt, BiSolidUpArrowAlt } from "react-icons/bi";
 import { Tooltip } from "react-tooltip";
+import { toast } from "react-toastify";
 const AllEquipments = () => {
   const products = useLoaderData();
   const [equipments, setEquipments] = useState(products);
 
   // handler
   const handleAscending = () => {
-    console.log("handle handleAscending");
     const newList = [...equipments].sort((a, b) => a.price - b.price);
     setEquipments(newList);
+    toast.success("The list is sorted in ascending order ");
   };
 
   const handleDescending = () => {
-    console.log("handleDescending");
     const newList = [...equipments].sort((a, b) => b.price - a.price);
     setEquipments(newList);
+    toast.success("The list is sorted in descending order ");
   };
 
   return (
@@ -35,7 +36,7 @@ const AllEquipments = () => {
       </div>
       <div className="mx-auto flex w-11/12 items-center justify-end gap-4 pb-4 md:w-full lg:w-11/12">
         <p className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
-          Sort
+          Sort :
         </p>
         <div className="flex items-center justify-center gap-2">
           {/* Ascending order */}

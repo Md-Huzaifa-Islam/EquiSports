@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/Contexts";
 import { Fade } from "react-awesome-reveal";
+import { toast } from "react-toastify";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
@@ -40,10 +41,11 @@ const AddEquipment = () => {
       body: JSON.stringify(newEquipment),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        toast.success("The equipment is added successfully");
         form.reset();
-      });
+      })
+      .catch((err) => toast.error(err.message));
   };
 
   return (

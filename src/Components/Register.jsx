@@ -3,6 +3,7 @@ import { AuthContext } from "../Providers/Contexts";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { signUpWithEmail, updateNameAndPhoto, setUser, signInWithGmail } =
@@ -17,13 +18,13 @@ const Register = () => {
     const photo = form.photo.value.trim();
     const password = form.password.value.trim();
     if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
+      toast.alert("Password must be at least 6 characters long.");
       return;
     } else if (!/[a-z]/.test(password)) {
-      alert("Password must contain at least one lowercase letter.");
+      toast.alert("Password must contain at least one lowercase letter.");
       return;
     } else if (!/[A-Z]/.test(password)) {
-      alert("Password must contain at least one uppercase letter.");
+      toast.alert("Password must contain at least one uppercase letter.");
       return;
     }
 
@@ -33,10 +34,11 @@ const Register = () => {
         updateNameAndPhoto(name, photo)
           .then(() => {
             navigate("/");
+            toast.success(`Your account is registered ${name}`);
           })
-          .catch((error) => console.log(error));
+          .catch((error) => toast.error(error.message));
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => toast.error(error.message));
   };
 
   return (
@@ -136,11 +138,11 @@ const Register = () => {
                 className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
                 onClick={() => {
                   signInWithGmail()
-                    .then((u) => {
-                      console.log(u);
+                    .then(() => {
+                      toast.success("You account is created ");
                       navigate("/");
                     })
-                    .catch((err) => console.log(err));
+                    .catch((err) => toast.error(err.message));
                 }}
               >
                 <FcGoogle size={24} />

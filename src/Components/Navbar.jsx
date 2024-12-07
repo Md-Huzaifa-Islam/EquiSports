@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/Contexts";
 import { Tooltip } from "react-tooltip";
+import { toast } from "react-toastify";
 const Navbar = () => {
   const { signout, user } = useContext(AuthContext);
   const links = (
@@ -72,7 +73,7 @@ const Navbar = () => {
   const handleSignOut = () => {
     signout()
       .then(() => {
-        // Sign-out successful.
+        toast.success(`Good bye! ${user.displayName}`);
       })
       .catch((error) => {
         // An error happened.

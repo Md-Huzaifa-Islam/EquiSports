@@ -92,24 +92,6 @@ const Detail = () => {
           </div>
         </Fade>
       </div>
-
-      {/* Actions Section */}
-      <div className="mt-8 flex justify-center gap-4">
-        <Fade cascade triggerOnce>
-          <button
-            onClick={() => alert("Added to Cart")}
-            className="btn btn-primary transform transition-transform duration-300 hover:btn-secondary hover:scale-105"
-          >
-            Add to Cart
-          </button>
-          <button
-            onClick={() => alert("Purchased Now")}
-            className="btn btn-secondary transform transition-transform duration-300 hover:btn-primary hover:scale-105"
-          >
-            Buy Now
-          </button>
-        </Fade>
-      </div>
     </div>
   );
 };
