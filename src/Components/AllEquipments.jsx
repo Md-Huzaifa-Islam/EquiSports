@@ -1,9 +1,26 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
+import { useState } from "react";
+import { BiSolidDownArrowAlt, BiSolidUpArrowAlt } from "react-icons/bi";
+import { Tooltip } from "react-tooltip";
 const AllEquipments = () => {
-  const equipments = useLoaderData();
-  console.log(equipments);
+  const products = useLoaderData();
+  const [equipments, setEquipments] = useState(products);
+
+  // handler
+  const handleAscending = () => {
+    console.log("handle handleAscending");
+    const newList = [...equipments].sort((a, b) => a.price - b.price);
+    setEquipments(newList);
+  };
+
+  const handleDescending = () => {
+    console.log("handleDescending");
+    const newList = [...equipments].sort((a, b) => b.price - a.price);
+    setEquipments(newList);
+  };
+
   return (
     <div className="mx-auto py-6 md:container sm:py-6 md:py-12">
       {/* header line part  */}
@@ -15,6 +32,34 @@ const AllEquipments = () => {
           Browse through our collection of top-rated sports equipment and find
           the perfect gear for your game!
         </p>
+      </div>
+      <div className="mx-auto flex w-11/12 items-center justify-end gap-4 pb-4 md:w-full lg:w-11/12">
+        <p className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
+          Sort
+        </p>
+        <div className="flex items-center justify-center gap-2">
+          {/* Ascending order */}
+          <button
+            onClick={handleAscending}
+            data-tooltip-id="sort"
+            data-tooltip-content="Ascending order"
+            data-tooltip-place="top"
+            className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-[2px] py-1 text-sm font-semibold text-white hover:shadow-lg sm:px-1 md:px-2 md:py-2 md:text-base lg:py-3 lg:text-lg"
+          >
+            <p>price</p> <BiSolidUpArrowAlt size={30} />
+          </button>
+          {/* Descending order */}
+          <button
+            onClick={handleDescending}
+            data-tooltip-id="sort"
+            data-tooltip-content="Descending order"
+            data-tooltip-place="top"
+            className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-[2px] py-1 text-sm font-semibold text-white hover:shadow-lg sm:px-1 md:px-2 md:py-2 md:text-base lg:py-3 lg:text-lg"
+          >
+            <p>Price</p> <BiSolidDownArrowAlt size={30} />
+          </button>
+          <Tooltip id="sort" className="z-30" />
+        </div>
       </div>
 
       {/* table part  */}

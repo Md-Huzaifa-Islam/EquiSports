@@ -121,13 +121,13 @@ const Navbar = () => {
             className="avatar"
             data-tooltip-content={user?.displayName}
             data-tooltip-place="bottom"
-            data-tooltip-id="my-tooltip"
+            data-tooltip-id="my-name"
           >
             <div className="w-10 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
               <img src={user?.photoURL} />
             </div>
           </div>
-          <Tooltip id="my-tooltip" className="z-50" />
+          <Tooltip id="my-name" className="z-50" />
           <button
             className="hover:bg-primary-dark btn bg-primary text-white"
             onClick={handleSignOut}
