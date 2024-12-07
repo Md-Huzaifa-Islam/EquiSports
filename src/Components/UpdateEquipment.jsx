@@ -62,16 +62,16 @@ const UpdateEquipment = () => {
   };
 
   return (
-    <div className="flex items-center justify-center px-5 py-12">
+    <div className="mx-auto flex max-w-md items-center justify-center px-5 py-12 sm:max-w-none">
       <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl">
         <Fade cascade triggerOnce>
-          <h2 className="mb-8 text-center text-3xl font-bold text-[#4338CA]">
+          <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">
             Update Equipment : <span className="underline">{itemName}</span>
           </h2>
         </Fade>
 
         <form
-          className="grid grid-cols-1 gap-6 md:grid-cols-2"
+          className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6"
           onSubmit={handleUpdatedItem}
         >
           <div className="form-control">
@@ -226,7 +226,7 @@ const UpdateEquipment = () => {
             />
           </div>
 
-          <div className="form-control col-span-2 mt-6">
+          <div className="form-control mt-6 sm:col-span-2">
             <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg">
               Update This Equipment
             </button>

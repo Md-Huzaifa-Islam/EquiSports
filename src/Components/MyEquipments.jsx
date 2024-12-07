@@ -27,26 +27,26 @@ const MyEquipments = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-12">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-6 sm:py-12">
       {/* header line part  */}
-      <div className="mb-10 text-center text-white">
-        <h2 className="text-4xl font-bold sm:text-3xl md:text-4xl">
+      <div className="mb-6 text-center text-white sm:mb-10">
+        <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">
           My All Equipment
         </h2>
-        <p className="mt-4 opacity-80">
+        <p className="mt-2 opacity-80 sm:mt-4">
           Browse through my collection of top-rated sports equipment and find
           the perfect gear for your game!
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-6 md:container sm:grid-cols-2 md:mx-auto md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:container sm:grid-cols-2 sm:gap-6 md:mx-auto md:grid-cols-2 lg:grid-cols-3">
         {equipments &&
           equipments.map((equipment) => (
             <div
               key={equipment._id}
-              className="card w-full max-w-md border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white"
+              className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white sm:mx-0 sm:max-w-md"
             >
-              <figure className="h-72 rounded-xl bg-blue-800 sm:h-60 md:h-72">
+              <figure className="h-60 rounded-xl bg-blue-800 sm:h-60 md:h-72">
                 <img
                   src={equipment.image}
                   alt={equipment.itemName}
@@ -86,19 +86,19 @@ const MyEquipments = () => {
                 <div className="mt-4 flex justify-between gap-2">
                   <Link
                     to={`/detail/${equipment._id}`}
-                    className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-3 font-semibold text-white hover:shadow-lg sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
+                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-3 font-semibold text-white hover:shadow-lg sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
                   >
                     See Details
                   </Link>
                   <Link
                     to={`/update/${equipment._id}`}
-                    className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-3 font-semibold text-white hover:shadow-lg sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
+                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-3 font-semibold text-white hover:shadow-lg sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
                   >
                     Update
                   </Link>
                   <button
                     onClick={() => handleDelete(equipment._id)}
-                    className="btn h-auto w-max transform rounded-lg bg-red-700 px-4 py-3 font-semibold text-white hover:bg-red-900 hover:shadow-lg sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
+                    className="btn h-auto transform rounded-lg bg-red-700 px-4 py-3 font-semibold text-white hover:bg-red-900 hover:shadow-lg sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
                   >
                     Delete
                   </button>

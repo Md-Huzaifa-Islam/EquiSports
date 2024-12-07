@@ -17,10 +17,10 @@ const Products = () => {
       className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16 md:mt-16"
     >
       <div className="container mx-auto px-4">
-        <h2 className="mb-4 text-center text-4xl font-semibold text-textLight sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
+        <h2 className="mb-2 text-center text-2xl font-semibold text-textLight sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
           Featured Sports Equipment
         </h2>
-        <p className="mb-12 text-center text-textLight text-opacity-70 sm:mb-6 md:mb-12 md:text-lg">
+        <p className="mb-6 text-center text-sm text-textLight text-opacity-70 sm:mb-6 sm:text-base md:mb-12 md:text-lg">
           Explore our curated selection of top-quality sports equipment,
           handpicked for enthusiasts and professionals alike.
         </p>
@@ -29,9 +29,9 @@ const Products = () => {
             products.map((product) => (
               <div
                 key={product._id}
-                className="card w-full max-w-md border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white"
+                className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white sm:mx-0 sm:max-w-md"
               >
-                <figure className="h-72 rounded-xl bg-blue-800 sm:h-60 md:h-72">
+                <figure className="h-60 rounded-xl bg-blue-800 md:h-72">
                   <img
                     src={product.image}
                     alt={product.itemName}

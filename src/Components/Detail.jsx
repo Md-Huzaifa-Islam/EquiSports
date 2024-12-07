@@ -6,14 +6,14 @@ const Detail = () => {
   const item = useLoaderData();
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-8">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-5 sm:p-8">
       {/* Header Section */}
-      <header className="mb-12 text-center sm:mb-10 md:mb-12">
+      <header className="mb-6 text-center sm:mb-10 md:mb-12">
         <Fade cascade triggerOnce>
-          <h1 className="text-4xl font-bold text-white sm:text-3xl md:text-4xl">
+          <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
             Equipment Details
           </h1>
-          <p className="mt-2 text-gray-200 md:text-lg">
+          <p className="mt-2 text-sm text-gray-200 sm:text-base md:text-lg">
             Discover the specifications of{" "}
             <span className="font-bold">{item.itemName}</span>
           </p>
@@ -28,7 +28,7 @@ const Detail = () => {
             <img
               src={item.image}
               alt={item.itemName}
-              className="mx-auto w-11/12 rounded-lg shadow-md sm:mx-0 sm:max-w-48 md:mx-auto md:max-w-64 lg:w-11/12 lg:max-w-none"
+              className="mx-0 w-11/12 max-w-36 rounded-lg shadow-md sm:max-w-48 md:mx-auto md:max-w-64 lg:w-11/12 lg:max-w-none"
             />
           </Zoom>
         </div>
@@ -36,22 +36,22 @@ const Detail = () => {
         {/* Information Section */}
         <Fade cascade triggerOnce direction="right">
           <div className="w-full lg:w-1/2">
-            <h2 className="mb-4 text-3xl font-bold text-indigo-700">
+            <h2 className="mb-3 text-2xl font-bold text-indigo-700 sm:mb-4 sm:text-3xl">
               {item.itemName}
             </h2>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">Category:</span>{" "}
               {item.categoryName}
             </p>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">Description:</span>{" "}
               {item.description}
             </p>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">Price: </span>
               {item.price} $
             </p>
-            <div className="mb-2 flex items-center gap-2 text-lg text-gray-700">
+            <div className="mb-2 flex items-center gap-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">Rating:</span>{" "}
               <ReactStars
                 value={item.rating || 0}
@@ -65,19 +65,19 @@ const Detail = () => {
                 activeColor="#ffd700"
               />
             </div>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">
                 Customization Options:
               </span>{" "}
               {item.customization}
             </p>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">
                 Processing Time:
               </span>{" "}
               {item.processingTime} <span> days</span>
             </p>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">Stock Status:</span>{" "}
               {item.stockStatus > 0 ? (
                 <span className="text-green-600">In Stock</span>
@@ -85,7 +85,7 @@ const Detail = () => {
                 <span className="text-red-600">Out of Stock</span>
               )}
             </p>
-            <p className="mb-2 text-lg text-gray-700">
+            <p className="mb-2 text-gray-700 sm:text-lg">
               <span className="font-medium text-indigo-600">Owner:</span>{" "}
               {item.owner_name}
             </p>
