@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import CustomerReviews from "./CustomerReviews";
+import FaqSection from "./FaqSection";
 import Products from "./Products";
 import SportContainer from "./SportContainer";
 
@@ -14,6 +15,7 @@ const Home = () => {
       <section>
         <Products></Products>
       </section>
+
       {/* sports category section  */}
       <section>
         <SportContainer></SportContainer>
@@ -21,6 +23,9 @@ const Home = () => {
       {/* CustomerReviews section  */}
       <section>
         <CustomerReviews></CustomerReviews>
+      </section>
+      <section>
+        <FaqSection></FaqSection>
       </section>
     </div>
   );

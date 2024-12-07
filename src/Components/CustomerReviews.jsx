@@ -22,6 +22,7 @@ const CustomerReviews = () => {
   const [reviewForm, setReviewForm] = useState(false);
   const handleAddreview = () => {
     user || navigate("/login");
+
     setReviewForm((p) => !p);
   };
   const handleSendreview = (e) => {
