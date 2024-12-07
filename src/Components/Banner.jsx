@@ -64,15 +64,15 @@ export default function Banner() {
 
       {/* Centered Text */}
       <div className="absolute left-1/2 top-1/2 z-10 w-full max-w-7xl -translate-x-1/2 -translate-y-1/2 text-center">
-        <h1 className="text-5xl font-extrabold text-white drop-shadow-md">
+        <h1 className="text-5xl font-extrabold text-white drop-shadow-md sm:text-4xl md:text-5xl">
           Welcome to Our Sports Store!
         </h1>
-        <p className="mt-4 text-lg text-gray-200">
+        <p className="mt-4 text-gray-200 md:text-lg">
           Explore the finest collection of premium sports equipment.
         </p>
         <a
           href="#allequipments"
-          className="mt-6 inline-block rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-8 py-3 text-lg font-semibold text-white transition-transform hover:scale-105"
+          className="mt-6 inline-block rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-8 py-3 text-lg font-semibold text-white transition-transform hover:scale-105 sm:px-6 sm:py-2 md:px-8 lg:py-3"
         >
           See more
         </a>

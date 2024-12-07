@@ -32,15 +32,15 @@ const Login = () => {
   };
 
   return (
-    <div className="mx-auto my-16 flex items-center justify-center md:container">
-      <div className="flex w-11/12 flex-col items-center justify-between gap-12 lg:flex-row">
+    <div className="mx-auto my-16 flex items-center justify-center md:container sm:my-12 md:my-16">
+      <div className="flex w-11/12 flex-col items-center justify-between gap-12 sm:gap-6 md:gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
           <div className="text-center md:mx-auto md:w-8/12 lg:mx-0 lg:w-1/2 lg:text-left">
-            <h1 className="mb-6 text-5xl font-extrabold text-white">
+            <h1 className="mb-6 text-5xl font-extrabold text-white sm:mb-3 sm:text-4xl md:mb-6 md:text-5xl">
               Welcome Back!
             </h1>
-            <p className="text-lg text-textLight">
+            <p className="text-textLight md:text-lg">
               Sign in to your account and continue your journey with us. Access
               your personalized dashboard <br /> explore sports equipment, and
               more!
@@ -51,7 +51,7 @@ const Login = () => {
         {/* Right Section */}
         <Fade
           cascade
-          className="flex-grow md:w-full md:max-w-lg lg:max-w-md"
+          className="flex-grow sm:w-full sm:max-w-md md:max-w-lg lg:max-w-md"
           triggerOnce
           duration={800}
         >

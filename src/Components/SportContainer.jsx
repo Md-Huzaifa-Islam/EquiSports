@@ -38,11 +38,11 @@ const SportContainer = () => {
   ];
 
   return (
-    <section className="mx-auto my-16 max-w-[1500px] px-4">
-      <h2 className="mb-4 text-center text-4xl font-semibold text-white">
+    <section className="mx-auto max-w-[1500px] px-4 sm:mt-0 md:my-16">
+      <h2 className="mb-4 text-center text-4xl font-semibold text-white sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
         Sports Category
       </h2>
-      <p className="mb-8 text-center text-lg text-white text-opacity-80">
+      <p className="mb-8 text-center text-white text-opacity-80 sm:mb-4 md:mb-8 md:text-lg">
         Explore different sports categories and choose your favorite!
       </p>
 
@@ -65,7 +65,7 @@ const SportContainer = () => {
         }}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Autoplay]}
-        className="mySwiper h-80"
+        className="mySwiper h-80 sm:h-44 md:h-80"
       >
         {categories.map((category) => (
           <SwiperSlide key={category.name}>

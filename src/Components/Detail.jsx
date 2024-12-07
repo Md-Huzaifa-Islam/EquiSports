@@ -8,10 +8,12 @@ const Detail = () => {
   return (
     <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-8">
       {/* Header Section */}
-      <header className="mb-12 text-center">
+      <header className="mb-12 text-center sm:mb-10 md:mb-12">
         <Fade cascade triggerOnce>
-          <h1 className="text-4xl font-bold text-white">Equipment Details</h1>
-          <p className="mt-2 text-lg text-gray-200">
+          <h1 className="text-4xl font-bold text-white sm:text-3xl md:text-4xl">
+            Equipment Details
+          </h1>
+          <p className="mt-2 text-gray-200 md:text-lg">
             Discover the specifications of{" "}
             <span className="font-bold">{item.itemName}</span>
           </p>
@@ -26,7 +28,7 @@ const Detail = () => {
             <img
               src={item.image}
               alt={item.itemName}
-              className="mx-auto w-11/12 rounded-lg shadow-md md:max-w-64 lg:w-11/12 lg:max-w-none"
+              className="mx-auto w-11/12 rounded-lg shadow-md sm:mx-0 sm:max-w-48 md:mx-auto md:max-w-64 lg:w-11/12 lg:max-w-none"
             />
           </Zoom>
         </div>

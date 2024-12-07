@@ -14,13 +14,13 @@ const Products = () => {
   return (
     <section
       id="allequipments"
-      className="mt-16 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16"
+      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16 md:mt-16"
     >
       <div className="container mx-auto px-4">
-        <h2 className="mb-4 text-center text-4xl font-semibold text-textLight">
+        <h2 className="mb-4 text-center text-4xl font-semibold text-textLight sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
           Featured Sports Equipment
         </h2>
-        <p className="mb-12 text-center text-lg text-textLight text-opacity-70">
+        <p className="mb-12 text-center text-textLight text-opacity-70 sm:mb-6 md:mb-12 md:text-lg">
           Explore our curated selection of top-quality sports equipment,
           handpicked for enthusiasts and professionals alike.
         </p>
