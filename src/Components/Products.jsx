@@ -14,7 +14,7 @@ const Products = () => {
   return (
     <section
       id="allequipments"
-      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16 md:mt-16"
+      className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-16 md:mt-16 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black"
     >
       <div className="container mx-auto px-4">
         <h2 className="mb-2 text-center text-2xl font-semibold text-textLight sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
@@ -29,9 +29,9 @@ const Products = () => {
             products.map((product) => (
               <div
                 key={product._id}
-                className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white sm:mx-0 sm:max-w-md"
+                className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white sm:mx-0 sm:max-w-md dark:bg-black"
               >
-                <figure className="h-60 rounded-xl bg-blue-800 md:h-72">
+                <figure className="h-60 rounded-xl bg-blue-800 md:h-72 dark:bg-[#22283C]">
                   <img
                     src={product.image}
                     alt={product.itemName}
@@ -39,7 +39,7 @@ const Products = () => {
                   />
                 </figure>
                 <div className="card-body p-4 px-2 pb-0">
-                  <h2 className="card-title bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-clip-text text-xl font-bold text-transparent">
+                  <h2 className="card-title bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-clip-text text-xl font-bold text-transparent dark:text-white">
                     {product.itemName}
                   </h2>
                   <p className="text-base font-medium text-[#4F46E5]">
@@ -71,7 +71,7 @@ const Products = () => {
                   <div className="mt-4">
                     <Link
                       to={`/detail/${product._id}`}
-                      className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 py-3 text-lg font-semibold text-white hover:shadow-lg"
+                      className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
                     >
                       See Details
                     </Link>

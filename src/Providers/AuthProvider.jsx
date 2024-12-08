@@ -16,6 +16,21 @@ const provider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState(localStorage.getItem("hTheme") || "light");
+
+  // handle dark and light theme
+  useEffect(() => {
+    localStorage.setItem("hTheme", theme);
+    console.log(theme);
+    document
+      .querySelector("html")
+      .setAttribute("data-theme", theme === "light" ? "light" : "dark");
+    if (theme === "dark") {
+      document.querySelector("html").classList.add("dark");
+    } else {
+      document.querySelector("html").classList.remove("dark");
+    }
+  }, [theme]);
 
   //   signUp with email and pass
   const signUpWithEmail = (email, password) => {
@@ -63,6 +78,8 @@ const AuthProvider = ({ children }) => {
     signInWithGmail,
     updateNameAndPhoto,
     signout,
+    theme,
+    setTheme,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

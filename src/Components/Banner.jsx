@@ -72,7 +72,7 @@ export default function Banner() {
         </p>
         <a
           href="#allequipments"
-          className="mt-3 inline-block rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-3 py-1 font-semibold text-white transition-transform hover:scale-105 sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3"
+          className="mt-3 inline-block rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-3 py-1 font-semibold text-white transition-transform hover:scale-105 sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black"
         >
           See more
         </a>

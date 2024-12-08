@@ -29,10 +29,14 @@ const Register = () => {
     }
 
     signUpWithEmail(email, password)
-      .then((p) => {
-        setUser(p.user);
+      .then((userCredential) => {
         updateNameAndPhoto(name, photo)
           .then(() => {
+            setUser({
+              ...userCredential.user,
+              displayName: name,
+              photoURL: photo,
+            });
             navigate("/");
             toast.success(`Your account is registered ${name}`);
           })
@@ -43,7 +47,7 @@ const Register = () => {
 
   return (
     <div className="mx-auto my-16 flex items-center justify-center md:container sm:my-12 md:my-16">
-      <div className="flex w-11/12 flex-col items-center gap-12 sm:gap-6 md:gap-12 lg:flex-row">
+      <div className="flex w-11/12 flex-col items-center justify-between gap-12 sm:gap-6 md:gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
           <div className="text-center md:mx-auto md:w-8/12 lg:mx-0 lg:w-1/2 lg:text-left">
@@ -64,7 +68,7 @@ const Register = () => {
           triggerOnce
           duration={800}
         >
-          <div className="card w-full rounded-lg bg-white p-8 shadow-lg">
+          <div className="card w-full rounded-lg bg-white p-8 shadow-lg dark:bg-black">
             <form className="card-body pb-0" onSubmit={handleSignUpEmail}>
               <h2 className="mb-6 text-center text-3xl font-bold text-primary">
                 Create an Account
@@ -72,7 +76,9 @@ const Register = () => {
 
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text text-gray-700">Name</span>
+                  <span className="label-text text-gray-700 dark:text-white">
+                    Name
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -85,7 +91,9 @@ const Register = () => {
 
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text text-gray-700">Email</span>
+                  <span className="label-text text-gray-700 dark:text-white">
+                    Email
+                  </span>
                 </label>
                 <input
                   type="email"
@@ -98,7 +106,9 @@ const Register = () => {
 
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text text-gray-700">Photo URL</span>
+                  <span className="label-text text-gray-700 dark:text-white">
+                    Photo URL
+                  </span>
                 </label>
                 <input
                   type="url"
@@ -111,7 +121,9 @@ const Register = () => {
 
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text text-gray-700">Password</span>
+                  <span className="label-text text-gray-700 dark:text-white">
+                    Password
+                  </span>
                 </label>
                 <input
                   type="password"
@@ -123,7 +135,7 @@ const Register = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn rounded-full bg-primary text-white transition-colors duration-300 hover:bg-secondary">
+                <button className="btn rounded-full bg-primary text-white transition-colors duration-300 hover:bg-secondary dark:bg-[#275f5a]">
                   Register
                 </button>
               </div>
@@ -135,7 +147,7 @@ const Register = () => {
 
             <div className="mb-4 flex flex-col items-center">
               <button
-                className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
+                className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white dark:bg-gray-700"
                 onClick={() => {
                   signInWithGmail()
                     .then(() => {

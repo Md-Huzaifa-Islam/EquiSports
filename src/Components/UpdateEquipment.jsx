@@ -62,7 +62,7 @@ const UpdateEquipment = () => {
 
   return (
     <div className="mx-auto flex max-w-md items-center justify-center px-5 py-12 sm:max-w-none">
-      <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl">
+      <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl dark:bg-black">
         <Fade cascade triggerOnce>
           <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">
             Update Equipment : <span className="underline">{itemName}</span>
@@ -75,7 +75,9 @@ const UpdateEquipment = () => {
         >
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Item Name</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Item Name
+              </span>
             </label>
             <input
               type="text"
@@ -89,7 +91,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Category Name</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Category Name
+              </span>
             </label>
             <input
               type="text"
@@ -103,7 +107,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Description</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Description
+              </span>
             </label>
             <input
               type="text"
@@ -117,7 +123,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Price</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Price
+              </span>
             </label>
             <input
               type="number"
@@ -131,7 +139,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Rating</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Rating
+              </span>
             </label>
             <input
               type="number"
@@ -145,7 +155,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Customization</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Customization
+              </span>
             </label>
             <input
               type="text"
@@ -159,7 +171,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">
+              <span className="label-text text-gray-700 dark:text-white">
                 Processing Time (Days)
               </span>
             </label>
@@ -175,7 +187,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Stock Status</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Stock Status
+              </span>
             </label>
             <input
               type="number"
@@ -189,7 +203,9 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">Photo URL</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                Photo URL
+              </span>
             </label>
             <input
               type="url"
@@ -202,7 +218,9 @@ const UpdateEquipment = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">User Name</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                User Name
+              </span>
             </label>
             <input
               type="url"
@@ -214,7 +232,9 @@ const UpdateEquipment = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700">User Email</span>
+              <span className="label-text text-gray-700 dark:text-white">
+                User Email
+              </span>
             </label>
             <input
               type="url"
@@ -226,7 +246,7 @@ const UpdateEquipment = () => {
           </div>
 
           <div className="form-control mt-6 sm:col-span-2">
-            <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg">
+            <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
               Update This Equipment
             </button>
           </div>

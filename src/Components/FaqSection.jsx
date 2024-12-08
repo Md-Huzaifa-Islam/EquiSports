@@ -4,6 +4,7 @@ import { AuthContext } from "../Providers/Contexts";
 import PrintFaq from "./Printfaq";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 const FaqSection = () => {
   const { user } = useContext(AuthContext);
   const [faqs, setFaqs] = useState([]);
@@ -24,26 +25,29 @@ const FaqSection = () => {
     e.preventDefault();
     user || navigate("/login");
     user || toast.info("You need to login to ask a question");
+
     const form = e.target;
     const faq = form.faq.value.trim();
     const newFaq = {
       question: faq,
       owner: user?.email,
     };
-    fetch("http://localhost:5000/faqs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newFaq),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setMyFaqs((p) => [...p, newFaq]);
+    user &&
+      fetch("http://localhost:5000/faqs", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newFaq),
+      })
+        .then((res) => res.json())
+        .then(() => {
+          toast.success("The faq is sent. You will soon get the answer. ");
+          setMyFaqs((p) => [...p, newFaq]);
 
-        form.reset();
-      });
+          form.reset();
+        })
+        .catch((err) => toast.error(err.message));
   };
 
   return (
@@ -105,7 +109,7 @@ const FaqSection = () => {
             </div>
 
             <div className="form-control mt-3">
-              <button className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg">
+              <button className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
                 Send This question
               </button>
             </div>

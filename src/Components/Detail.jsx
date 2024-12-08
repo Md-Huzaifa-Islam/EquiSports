@@ -6,7 +6,7 @@ const Detail = () => {
   const item = useLoaderData();
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-5 sm:p-8">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-5 sm:p-8 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
       {/* Header Section */}
       <header className="mb-6 text-center sm:mb-10 md:mb-12">
         <Fade cascade triggerOnce>
@@ -21,7 +21,7 @@ const Detail = () => {
       </header>
 
       {/* Main Body Section */}
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-lg bg-white p-8 shadow-lg transition-transform duration-500 hover:scale-105 lg:flex-row">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 rounded-lg bg-white p-8 shadow-lg transition-transform duration-500 hover:scale-105 lg:flex-row dark:bg-black">
         {/* Image Section */}
         <div className="w-full flex-shrink-0 lg:w-1/2">
           <Zoom triggerOnce>
@@ -39,19 +39,19 @@ const Detail = () => {
             <h2 className="mb-3 text-2xl font-bold text-indigo-700 sm:mb-4 sm:text-3xl">
               {item.itemName}
             </h2>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">Category:</span>{" "}
               {item.categoryName}
             </p>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">Description:</span>{" "}
               {item.description}
             </p>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">Price: </span>
               {item.price} $
             </p>
-            <div className="mb-2 flex items-center gap-2 text-gray-700 sm:text-lg">
+            <div className="mb-2 flex items-center gap-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">Rating:</span>{" "}
               <ReactStars
                 value={item.rating || 0}
@@ -65,19 +65,19 @@ const Detail = () => {
                 activeColor="#ffd700"
               />
             </div>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">
                 Customization Options:
               </span>{" "}
               {item.customization}
             </p>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">
                 Processing Time:
               </span>{" "}
               {item.processingTime} <span> days</span>
             </p>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">Stock Status:</span>{" "}
               {item.stockStatus > 0 ? (
                 <span className="text-green-600">In Stock</span>
@@ -85,7 +85,7 @@ const Detail = () => {
                 <span className="text-red-600">Out of Stock</span>
               )}
             </p>
-            <p className="mb-2 text-gray-700 sm:text-lg">
+            <p className="mb-2 text-gray-700 sm:text-lg dark:text-white">
               <span className="font-medium text-indigo-600">Owner:</span>{" "}
               {item.owner_name}
             </p>

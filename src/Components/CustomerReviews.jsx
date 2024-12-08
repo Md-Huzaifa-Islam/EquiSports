@@ -42,6 +42,7 @@ const CustomerReviews = () => {
       rating,
       date: "2024-12-05",
     };
+
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
@@ -50,12 +51,13 @@ const CustomerReviews = () => {
       body: JSON.stringify(newReview),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        toast.success("The review is added");
         setReviews((p) => [...p, newReview]);
 
         form.reset();
-      });
+      })
+      .catch((err) => toast.error(err.message));
   };
   return (
     <section className="mx-auto mt-16 max-w-[1500px] px-5 md:my-16 md:mt-32">
@@ -81,7 +83,7 @@ const CustomerReviews = () => {
           >
             {reviews.map((review, index) => (
               <SwiperSlide key={index}>
-                <div className="m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-white p-5 shadow-lg sm:w-auto">
+                <div className="m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-white p-5 shadow-lg sm:w-auto dark:bg-black">
                   <div className="mb-4 flex items-center">
                     <img
                       src={review.image}
@@ -116,7 +118,7 @@ const CustomerReviews = () => {
         </div>
         <button
           onClick={handleAddreview}
-          className={`btn ${reviewForm && "hidden"} h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg`}
+          className={`btn ${reviewForm && "hidden"} h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:from-gray-800 dark:via-purple-900 dark:to-black`}
         >
           Add Your Review
         </button>
@@ -182,7 +184,7 @@ const CustomerReviews = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg">
+              <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
                 Send This review
               </button>
             </div>

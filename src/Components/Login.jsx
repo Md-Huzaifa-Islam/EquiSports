@@ -69,13 +69,18 @@ const Login = () => {
           duration={800}
         >
           <div className="card w-full rounded-lg bg-white shadow-lg">
-            <form className="card-body pb-0" onSubmit={handleSignIn}>
+            <form
+              className="card-body pb-0 dark:bg-black"
+              onSubmit={handleSignIn}
+            >
               <h2 className="text-center text-3xl font-bold text-primary">
                 Login
               </h2>
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text text-gray-700">Email</span>
+                  <span className="label-text text-gray-700 dark:text-white">
+                    Email
+                  </span>
                 </label>
                 <input
                   type="email"
@@ -87,7 +92,9 @@ const Login = () => {
               </div>
               <div className="form-control mt-4">
                 <label className="label">
-                  <span className="label-text text-gray-700">Password</span>
+                  <span className="label-text text-gray-700 dark:text-white">
+                    Password
+                  </span>
                 </label>
                 <input
                   type="password"
@@ -98,19 +105,19 @@ const Login = () => {
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn rounded-full bg-primary text-white transition-colors duration-300 hover:bg-secondary">
+                <button className="btn rounded-full bg-primary text-white transition-colors duration-300 hover:bg-secondary dark:bg-[#275f5a]">
                   Login
                 </button>
               </div>
             </form>
 
-            <div className="my-4 flex items-center justify-center">
+            <div className="flex items-center justify-center py-4 dark:bg-black">
               <p className="mx-2 text-xl font-bold text-primary">Or</p>
             </div>
 
-            <div className="mb-12 flex flex-col items-center">
+            <div className="flex flex-col items-center pb-12 dark:bg-black">
               <button
-                className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white"
+                className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white dark:bg-gray-700"
                 onClick={handleSignInWithG}
               >
                 <FcGoogle size={24} />

@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer className="mt-12 border-t-2 border-white bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12 text-textLight">
+    <footer className="mt-12 border-t-2 border-white bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-12 text-textLight dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
       <div className="container mx-auto px-5">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">

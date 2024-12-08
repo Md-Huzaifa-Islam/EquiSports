@@ -67,7 +67,7 @@ const AllEquipments = () => {
       <div className="hidden overflow-x-auto sm:block lg:mx-0">
         <table className="table mx-auto w-11/12 overflow-hidden rounded-2xl md:w-full lg:w-11/12">
           {/* head */}
-          <thead className="mx-auto w-full bg-[#4338CA] text-center text-sm text-white sm:text-lg md:text-xl lg:text-2xl">
+          <thead className="mx-auto w-full bg-[#4338CA] text-center text-sm text-white sm:text-lg md:text-xl lg:text-2xl dark:bg-[#2f4290]">
             <tr>
               <th className="">Items</th>
               <th>Name</th>
@@ -82,7 +82,7 @@ const AllEquipments = () => {
               return (
                 <tr
                   key={equipment._id}
-                  className="hover bg-white text-center text-xs font-semibold text-black md:text-base lg:text-lg"
+                  className="hover bg-white text-center text-xs font-semibold text-black md:text-base lg:text-lg dark:bg-black dark:text-white"
                 >
                   <td className="">{index + 1}</td>
                   <td>{equipment.itemName}</td>
