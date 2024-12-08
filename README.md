@@ -30,9 +30,9 @@ Admins can add new sports equipment to the store by filling out a form that incl
 - Stock Status
 - Image URL
 
-### 3. Equipment Ratings
+### 3. BackEnd Integration
 
-Users can rate each piece of equipment using a star rating system. The ratings help other users make informed decisions on which equipment to purchase.
+Backend is integrated using Expressjs, mongoDB, NodeJS and some middleware. The server is deployed using vercel.
 
 ### 4. Responsive Layout
 
