@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BiSolidDownArrowAlt, BiSolidUpArrowAlt } from "react-icons/bi";
 import { Tooltip } from "react-tooltip";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 const AllEquipments = () => {
   const products = useLoaderData();
   const [equipments, setEquipments] = useState(products);
@@ -24,6 +25,9 @@ const AllEquipments = () => {
 
   return (
     <div className="mx-auto py-6 md:container sm:py-6 md:py-12">
+      <Helmet>
+        <title>{`All Equipments | EquiSports`}</title>
+      </Helmet>
       {/* header line part  */}
       <div className="mx-auto mb-6 w-11/12 text-center text-white sm:w-10/12 md:w-8/12 lg:w-auto">
         <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">
@@ -67,7 +71,7 @@ const AllEquipments = () => {
       <div className="hidden overflow-x-auto sm:block lg:mx-0">
         <table className="table mx-auto w-11/12 overflow-hidden rounded-2xl md:w-full lg:w-11/12">
           {/* head */}
-          <thead className="mx-auto w-full bg-[#4338CA] text-center text-sm text-white sm:text-lg md:text-xl lg:text-2xl dark:bg-[#2f4290]">
+          <thead className="mx-auto w-full bg-[#4338CA] text-center text-sm text-white dark:bg-[#2f4290] sm:text-lg md:text-xl lg:text-2xl">
             <tr>
               <th className="">Items</th>
               <th>Name</th>
@@ -82,7 +86,7 @@ const AllEquipments = () => {
               return (
                 <tr
                   key={equipment._id}
-                  className="hover bg-white text-center text-xs font-semibold text-black md:text-base lg:text-lg dark:bg-black dark:text-white"
+                  className="hover bg-white text-center text-xs font-semibold text-black dark:bg-black dark:text-white md:text-base lg:text-lg"
                 >
                   <td className="">{index + 1}</td>
                   <td>{equipment.itemName}</td>

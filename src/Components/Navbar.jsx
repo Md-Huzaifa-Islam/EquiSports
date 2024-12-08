@@ -114,7 +114,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to={"/"} className="btn btn-ghost text-2xl hover:text-hovertext">
+        <Link
+          to={"/"}
+          className="btn btn-ghost hidden text-2xl hover:text-hovertext sm:inline-flex"
+        >
           EquiSports
         </Link>
       </div>

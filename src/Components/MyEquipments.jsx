@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 const MyEquipments = () => {
   const { user, theme } = useContext(AuthContext);
   const [equipments, setEquipments] = useState(null);
@@ -55,6 +56,9 @@ const MyEquipments = () => {
   return (
     <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-6 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:py-12">
       {/* header line part  */}
+      <Helmet>
+        <title>{`My Equipments | EquiSports`}</title>
+      </Helmet>
       <div className="mb-6 text-center text-white sm:mb-10">
         <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">
           My All Equipment

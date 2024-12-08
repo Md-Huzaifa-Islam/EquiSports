@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInWithEmail, signInWithGmail } = useContext(AuthContext);
@@ -64,6 +65,9 @@ const Login = () => {
 
   return (
     <div className="mx-auto my-16 flex items-center justify-center md:container sm:my-12 md:my-16">
+      <Helmet>
+        <title>{`Login | EquiSports`}</title>
+      </Helmet>
       <div className="flex w-11/12 flex-col items-center justify-between gap-12 sm:gap-6 md:gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>

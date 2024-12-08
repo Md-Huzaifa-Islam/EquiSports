@@ -3,6 +3,7 @@ import { AuthContext } from "../Providers/Contexts";
 import { Fade } from "react-awesome-reveal";
 import { toast } from "react-toastify";
 import ReactStars from "react-rating-stars-component";
+import { Helmet } from "react-helmet-async";
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
   const [rating, setRating] = useState(0);
@@ -53,6 +54,9 @@ const AddEquipment = () => {
 
   return (
     <div className="mx-auto flex max-w-md items-center justify-center px-5 py-12 sm:max-w-none">
+      <Helmet>
+        <title>{`Add Equipment | EquiSports`}</title>
+      </Helmet>
       <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl dark:bg-black">
         <Fade cascade triggerOnce>
           <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import CustomerReviews from "./CustomerReviews";
 import FaqSection from "./FaqSection";
@@ -7,6 +8,9 @@ import SportContainer from "./SportContainer";
 const Home = () => {
   return (
     <div className="">
+      <Helmet>
+        <title>{`Home | EquiSports`}</title>
+      </Helmet>
       {/* banner section  */}
       <section className="px-5">
         <Banner></Banner>
