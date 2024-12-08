@@ -50,13 +50,16 @@ const UpdateEquipment = () => {
       owner_name,
       owner,
     };
-    fetch(`http://localhost:5000/equipments/${equipment._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
+    fetch(
+      `https://equipment-store-huzaifa.vercel.app/equipments/${equipment._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newEquipment),
       },
-      body: JSON.stringify(newEquipment),
-    })
+    )
       .then((res) => res.json())
       .then(() => {
         toast.success("Equipment updated successfully");

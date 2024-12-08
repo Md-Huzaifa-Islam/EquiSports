@@ -11,12 +11,16 @@ const FaqSection = () => {
   const [myFaqs, setMyFaqs] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    fetch("http://localhost:5000/faqs/filtered/admin@gmail.com")
+    fetch(
+      "https://equipment-store-huzaifa.vercel.app/faqs/filtered/admin@gmail.com",
+    )
       .then((res) => res.json())
       .then((data) => setFaqs(data));
   }, []);
   useEffect(() => {
-    fetch(`http://localhost:5000/faqs/filtered/${user?.email}`)
+    fetch(
+      `https://equipment-store-huzaifa.vercel.app/faqs/filtered/${user?.email}`,
+    )
       .then((res) => res.json())
       .then((data) => setMyFaqs(data));
   }, [user]);
@@ -33,7 +37,7 @@ const FaqSection = () => {
       owner: user?.email,
     };
     user &&
-      fetch("http://localhost:5000/faqs", {
+      fetch("https://equipment-store-huzaifa.vercel.app/faqs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

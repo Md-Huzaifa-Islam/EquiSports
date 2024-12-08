@@ -49,7 +49,7 @@ const CustomerReviews = () => {
       date: "2024-12-05",
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://equipment-store-huzaifa.vercel.app/reviews", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ const CustomerReviews = () => {
           >
             {reviews.map((review, index) => (
               <SwiperSlide key={index}>
-                <div className="m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-white p-5 shadow-lg sm:w-auto dark:bg-black">
+                <div className="m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-white p-5 shadow-lg dark:bg-black sm:w-auto">
                   <div className="mb-4 flex items-center">
                     <img
                       src={review.image}

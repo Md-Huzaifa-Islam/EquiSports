@@ -43,7 +43,7 @@ const Login = () => {
           username: p.user.displayName,
           email: p.user.email,
         };
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://equipment-store-huzaifa.vercel.app/users`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

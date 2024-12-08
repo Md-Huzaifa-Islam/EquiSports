@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 const SportContainer = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch("https://equipment-store-huzaifa.vercel.app/category")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);

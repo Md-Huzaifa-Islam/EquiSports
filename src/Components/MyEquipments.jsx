@@ -9,7 +9,9 @@ const MyEquipments = () => {
   const { user, theme } = useContext(AuthContext);
   const [equipments, setEquipments] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:5000/equipments/filtered/${user.email}`)
+    fetch(
+      `https://equipment-store-huzaifa.vercel.app/equipments/filtered/${user.email}`,
+    )
       .then((res) => res.json())
       .then((data) => setEquipments(data));
   }, [user]);
@@ -28,7 +30,7 @@ const MyEquipments = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/equipments/${id}`, {
+        fetch(`https://equipment-store-huzaifa.vercel.app/equipments/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -51,7 +53,7 @@ const MyEquipments = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-6 sm:py-12 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-6 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:py-12">
       {/* header line part  */}
       <div className="mb-6 text-center text-white sm:mb-10">
         <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">
@@ -68,9 +70,9 @@ const MyEquipments = () => {
           equipments.map((equipment) => (
             <div
               key={equipment._id}
-              className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white sm:mx-0 sm:max-w-md dark:bg-black"
+              className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white dark:bg-black sm:mx-0 sm:max-w-md"
             >
-              <figure className="h-60 rounded-xl bg-blue-800 sm:h-60 md:h-72 dark:bg-[#22283C]">
+              <figure className="h-60 rounded-xl bg-blue-800 dark:bg-[#22283C] sm:h-60 md:h-72">
                 <img
                   src={equipment.image}
                   alt={equipment.itemName}
@@ -110,13 +112,13 @@ const MyEquipments = () => {
                 <div className="mt-4 flex justify-between gap-2">
                   <Link
                     to={`/detail/${equipment._id}`}
-                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-3 font-semibold text-white hover:shadow-lg sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px] dark:from-gray-800 dark:to-black"
+                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-3 font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
                   >
                     See Details
                   </Link>
                   <Link
                     to={`/update/${equipment._id}`}
-                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-3 font-semibold text-white hover:shadow-lg sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px] dark:from-gray-800 dark:via-purple-900"
+                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-3 font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:via-purple-900 sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
                   >
                     Update
                   </Link>

@@ -19,7 +19,8 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: () =>
+          fetch("https://equipment-store-huzaifa.vercel.app/reviews"),
       },
       {
         path: "/login",
@@ -32,7 +33,8 @@ export const router = createBrowserRouter([
       {
         path: "/allequipments",
         element: <AllEquipments></AllEquipments>,
-        loader: () => fetch("http://localhost:5000/equipments/"),
+        loader: () =>
+          fetch("https://equipment-store-huzaifa.vercel.app/equipments/"),
       },
       {
         path: "/addequipments",
@@ -50,7 +52,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/equipments/${params.id}`),
+          fetch(
+            `https://equipment-store-huzaifa.vercel.app/equipments/${params.id}`,
+          ),
       },
       {
         path: "/myequipments",
@@ -68,7 +72,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/equipments/${params.id}`),
+          fetch(
+            `https://equipment-store-huzaifa.vercel.app/equipments/${params.id}`,
+          ),
       },
     ],
   },
