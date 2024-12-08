@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/Contexts";
 import { FcGoogle } from "react-icons/fc";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const { signInWithEmail, signInWithGmail } = useContext(AuthContext);
+  const [show, setShow] = useState(false);
   const location = useLocation().state;
   const navigate = useNavigate();
 
@@ -112,19 +114,25 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="form-control mt-4">
+              <div className="form-control relative mt-4">
                 <label className="label">
                   <span className="label-text text-gray-700 dark:text-white">
                     Password
                   </span>
                 </label>
                 <input
-                  type="password"
+                  type={!show ? "password" : "text"}
                   placeholder="Enter your password"
                   name="password"
                   className="input input-bordered rounded-lg"
                   required
                 />
+                <div
+                  onClick={() => setShow((p) => !p)}
+                  className="absolute bottom-3 right-1 cursor-pointer px-2"
+                >
+                  {show ? <FaRegEyeSlash size={25} /> : <FaRegEye size={25} />}
+                </div>
               </div>
               <div className="form-control mt-6">
                 <button className="btn rounded-full bg-primary text-white transition-colors duration-300 hover:bg-secondary dark:bg-[#275f5a]">
