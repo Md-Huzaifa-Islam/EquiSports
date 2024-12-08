@@ -1,8 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { toast } from "react-toastify";
+import ReactStars from "react-rating-stars-component";
+import { useState } from "react";
+
 const UpdateEquipment = () => {
   const equipment = useLoaderData();
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
   console.log(equipment);
   const {
     image,
@@ -18,6 +24,7 @@ const UpdateEquipment = () => {
     owner_name,
   } = equipment;
 
+  const [ratings, setRating] = useState(rating);
   // Update button handler
   const handleUpdatedItem = (e) => {
     e.preventDefault();
@@ -26,7 +33,6 @@ const UpdateEquipment = () => {
     const category = form.category.value.trim();
     const description = form.description.value.trim();
     const price = Number(form.price.value.trim());
-    const rating = Number(form.rating.value.trim());
     const customization = form.customization.value.trim();
     const time = Number(form.time.value.trim());
     const stock = Number(form.stock.value.trim());
@@ -36,7 +42,7 @@ const UpdateEquipment = () => {
       categoryName: category,
       description,
       price,
-      rating,
+      rating: ratings,
       customization,
       processingTime: time,
       stockStatus: stock,
@@ -81,7 +87,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="text"
-              placeholder="Item Name"
               defaultValue={itemName}
               name="name"
               className="input input-bordered rounded-lg"
@@ -97,7 +102,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="text"
-              placeholder="Category Name"
               defaultValue={categoryName}
               name="category"
               className="input input-bordered rounded-lg"
@@ -113,7 +117,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="text"
-              placeholder="Description"
               defaultValue={description}
               name="description"
               className="input input-bordered rounded-lg"
@@ -129,7 +132,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="number"
-              placeholder="Price"
               defaultValue={price}
               name="price"
               className="input input-bordered rounded-lg"
@@ -143,13 +145,14 @@ const UpdateEquipment = () => {
                 Rating
               </span>
             </label>
-            <input
-              type="number"
-              placeholder="Rating"
-              defaultValue={rating}
-              name="rating"
-              className="input input-bordered rounded-lg"
-              required
+            <ReactStars
+              count={5}
+              value={ratings}
+              onChange={handleRatingChange}
+              size={30}
+              isHalf={true}
+              activeColor="#ffd700"
+              color="#e4e5e9"
             />
           </div>
 
@@ -162,7 +165,6 @@ const UpdateEquipment = () => {
             <input
               type="text"
               defaultValue={customization}
-              placeholder="Customization"
               name="customization"
               className="input input-bordered rounded-lg"
               required
@@ -177,7 +179,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="text"
-              placeholder="Processing Time"
               defaultValue={processingTime}
               name="time"
               className="input input-bordered rounded-lg"
@@ -193,7 +194,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="number"
-              placeholder="Stock Status"
               defaultValue={stockStatus}
               name="stock"
               className="input input-bordered rounded-lg"
@@ -209,7 +209,6 @@ const UpdateEquipment = () => {
             </label>
             <input
               type="url"
-              placeholder="Photo URL"
               defaultValue={image}
               name="image"
               className="input input-bordered rounded-lg"

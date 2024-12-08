@@ -37,9 +37,27 @@ const Login = () => {
 
   const handleSignInWithG = () => {
     signInWithGmail()
-      .then(() => {
-        navigate(location || "/");
+      .then((p) => {
         toast.success("Welcome back !");
+        const newUser = {
+          username: p.user.displayName,
+          email: p.user.email,
+        };
+        fetch(`http://localhost:5000/users`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            // toast.success("Equipment updated successfully");
+          })
+          .catch((error) => {
+            toast.error("Error updating equipment:", error);
+          });
+        navigate(location || "/");
       })
       .catch((err) => toast.error(err.message));
   };

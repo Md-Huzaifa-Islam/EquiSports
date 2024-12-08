@@ -1,6 +1,8 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
+import ReactStars from "react-rating-stars-component";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,6 +19,10 @@ import { toast } from "react-toastify";
 
 const CustomerReviews = () => {
   const { user } = useContext(AuthContext);
+  const [rating, setRating] = useState(0);
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
   const navigate = useNavigate();
   const data = useLoaderData();
   const [reviews, setReviews] = useState(data);
@@ -31,7 +37,7 @@ const CustomerReviews = () => {
     const form = e.target;
     const name = form.name.value.trim();
     const profession = form.profession.value || "Not available";
-    const rating = form.rating.value.trim();
+
     const review = form.review.value.trim();
     const newReview = {
       name: user.displayName,
@@ -105,9 +111,17 @@ const CustomerReviews = () => {
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
-                      <span className="text-yellow-500">
-                        {"⭐".repeat(review.rating)}
-                      </span>
+                      <ReactStars
+                        value={review.rating || 0}
+                        count={5}
+                        size={20}
+                        edit={false}
+                        isHalf={true}
+                        emptyIcon={<IoStarOutline />}
+                        halfIcon={<IoStarHalf />}
+                        filledIcon={<IoStar />}
+                        activeColor="#ffd700"
+                      />
                     </div>
                     <p className="text-sm text-gray-400">{review.date}</p>
                   </div>
@@ -161,12 +175,14 @@ const CustomerReviews = () => {
               <label className="label">
                 <span className="label-text text-gray-700">Rating</span>
               </label>
-              <input
-                type="number"
-                placeholder="Rating"
-                name="rating"
-                className="input input-bordered rounded-lg"
-                required
+              <ReactStars
+                count={5}
+                value={rating}
+                onChange={handleRatingChange}
+                size={30}
+                isHalf={true}
+                activeColor="#ffd700"
+                color="#e4e5e9"
               />
             </div>
 

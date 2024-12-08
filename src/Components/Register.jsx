@@ -17,6 +17,10 @@ const Register = () => {
     const email = form.email.value.trim();
     const photo = form.photo.value.trim();
     const password = form.password.value.trim();
+    const newUser = {
+      username: name,
+      email: email,
+    };
     if (password.length < 6) {
       toast.alert("Password must be at least 6 characters long.");
       return;
@@ -39,6 +43,20 @@ const Register = () => {
             });
             navigate("/");
             toast.success(`Your account is registered ${name}`);
+            fetch(`http://localhost:5000/users`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(newUser),
+            })
+              .then((res) => res.json())
+              .then(() => {
+                // toast.success("Equipment updated successfully");
+              })
+              .catch((error) => {
+                toast.error("Error updating equipment:", error);
+              });
           })
           .catch((error) => toast.error(error.message));
       })
@@ -150,8 +168,26 @@ const Register = () => {
                 className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white dark:bg-gray-700"
                 onClick={() => {
                   signInWithGmail()
-                    .then(() => {
+                    .then((p) => {
                       toast.success("You account is created ");
+                      const newUser = {
+                        username: p.user.displayName,
+                        email: p.user.email,
+                      };
+                      fetch(`http://localhost:5000/users`, {
+                        method: "PUT",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(newUser),
+                      })
+                        .then((res) => res.json())
+                        .then(() => {
+                          // toast.success("Equipment updated successfully");
+                        })
+                        .catch((error) => {
+                          toast.error("Error updating equipment:", error);
+                        });
                       navigate("/");
                     })
                     .catch((err) => toast.error(err.message));

@@ -1,11 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/Contexts";
 import { Fade } from "react-awesome-reveal";
 import { toast } from "react-toastify";
-
+import ReactStars from "react-rating-stars-component";
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
-
+  const [rating, setRating] = useState(0);
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
   const handleAddItem = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,7 +16,7 @@ const AddEquipment = () => {
     const category = form.category.value.trim();
     const description = form.description.value.trim();
     const price = Number(form.price.value.trim());
-    const rating = Number(form.rating.value.trim());
+
     const customization = form.customization.value.trim();
     const time = Number(form.time.value.trim());
     const stock = Number(form.stock.value.trim());
@@ -127,12 +130,14 @@ const AddEquipment = () => {
                 Rating
               </span>
             </label>
-            <input
-              type="number"
-              placeholder="Rating"
-              name="rating"
-              className="input input-bordered rounded-lg"
-              required
+            <ReactStars
+              count={5}
+              value={rating}
+              onChange={handleRatingChange}
+              size={30}
+              isHalf={true}
+              activeColor="#ffd700"
+              color="#e4e5e9"
             />
           </div>
 
@@ -174,7 +179,7 @@ const AddEquipment = () => {
             </label>
             <input
               type="number"
-              placeholder="Stock Status"
+              placeholder="Available number"
               name="stock"
               className="input input-bordered rounded-lg"
               required

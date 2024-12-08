@@ -194,6 +194,7 @@ const Navbar = () => {
           >
             Register
           </Link>
+
           <label
             className="flex cursor-pointer gap-2"
             onClick={handleChangeTheme}
@@ -216,7 +217,10 @@ const Navbar = () => {
               type="checkbox"
               value="synthwave"
               className="theme-controller toggle"
-              checked={theme == "dark"}
+              checked={theme === "dark"}
+              data-tooltip-content="Click here to change theme"
+              data-tooltip-place="bottom"
+              data-tooltip-id="theme"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -231,6 +235,8 @@ const Navbar = () => {
             >
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
+            {/* Tooltip component */}
+            <Tooltip id="theme" className="z-50" />
           </label>
         </div>
       )}
