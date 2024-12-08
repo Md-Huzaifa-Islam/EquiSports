@@ -36,7 +36,6 @@ const AddEquipment = () => {
       owner: user.email,
     };
 
-    console.log(newEquipment);
     fetch("https://equipment-store-huzaifa.vercel.app/equipments", {
       method: "POST",
       headers: {

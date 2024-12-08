@@ -62,6 +62,7 @@ const CustomerReviews = () => {
         setReviews((p) => [...p, newReview]);
 
         form.reset();
+        setReviewForm((p) => !p);
       })
       .catch((err) => toast.error(err.message));
   };

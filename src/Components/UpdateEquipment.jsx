@@ -10,7 +10,6 @@ const UpdateEquipment = () => {
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
-  console.log(equipment);
   const {
     image,
     itemName,

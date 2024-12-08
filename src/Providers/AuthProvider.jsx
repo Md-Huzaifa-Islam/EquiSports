@@ -21,7 +21,6 @@ const AuthProvider = ({ children }) => {
   // handle dark and light theme
   useEffect(() => {
     localStorage.setItem("hTheme", theme);
-    console.log(theme);
     document
       .querySelector("html")
       .setAttribute("data-theme", theme === "light" ? "light" : "dark");
@@ -61,7 +60,6 @@ const AuthProvider = ({ children }) => {
   // Observer
   useEffect(() => {
     const disconnect = onAuthStateChanged(auth, (user) => {
-      console.log(user);
       setUser(user);
       setLoading(false);
     });
