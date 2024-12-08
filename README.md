@@ -60,7 +60,7 @@ Users can toggle between light and dark modes for an improved user experience.
 
 ## Acknowledgments
 
-  Special thanks to the libraries and frameworks used in this project:
+Special thanks to the libraries and frameworks used in this project:
 
 - React.js
 - TailwindCSS
