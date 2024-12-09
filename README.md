@@ -4,7 +4,7 @@
 
 ## Repository Link
 
-[EquiSports GitHub Repository](https://github.com/programming-hero-web-course2/b10-a10-client-side-Md-Huzaifa-Islam)
+[EquiSports GitHub Repository](https://github.com/Md-Huzaifa-Islam/EquiSports)
 
 ## Live Link
 
