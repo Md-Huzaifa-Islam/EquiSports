@@ -17,7 +17,7 @@ import { EffectFade, Autoplay } from "swiper/modules";
 
 export default function Banner() {
   return (
-    <div className="relative mt-6 w-full sm:mt-10">
+    <div className="relative w-full">
       {/* Swiper Component */}
       <Swiper
         spaceBetween={30}
@@ -32,7 +32,7 @@ export default function Banner() {
         <SwiperSlide>
           <img
             src={boroloks}
-            className="mx-auto aspect-[8/4] w-full max-w-7xl rounded-xl object-cover object-center filter"
+            className="mx-auto h-[65vh] w-full object-cover object-center filter"
             alt="boroloks"
           />
         </SwiperSlide>
@@ -40,30 +40,30 @@ export default function Banner() {
         <SwiperSlide>
           <img
             src={hockeybat}
-            className="mx-auto aspect-[8/4] w-full max-w-7xl rounded-xl object-cover object-center filter"
+            className="mx-auto h-[65vh] w-full object-cover object-center filter"
             alt="hockeybat"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={sockerball}
-            className="mx-auto aspect-[8/4] w-full max-w-7xl rounded-xl object-cover object-center filter"
+            className="mx-auto h-[65vh] w-full object-cover object-center filter"
             alt="sockerball"
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             src={racket}
-            className="mx-auto aspect-[8/4] w-full max-w-7xl rounded-xl object-cover object-center filter"
+            className="mx-auto h-[65vh] w-full object-cover object-center filter"
             alt="racket"
           />
         </SwiperSlide>
       </Swiper>
       {/* Overlay */}
-      <div className="absolute left-1/2 top-1/2 z-10 h-full w-full max-w-7xl -translate-x-1/2 -translate-y-1/2 rounded-xl bg-black opacity-80"></div>
+      <div className="absolute left-1/2 top-1/2 z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 bg-black opacity-80"></div>
 
       {/* Centered Text */}
-      <div className="absolute left-1/2 top-1/2 z-10 w-full max-w-7xl -translate-x-1/2 -translate-y-1/2 text-center">
+      <div className="absolute left-1/2 top-1/2 z-10 w-full -translate-x-1/2 -translate-y-1/2 text-center">
         <h1 className="text-2xl font-extrabold text-white drop-shadow-md sm:text-4xl md:text-5xl">
           Welcome to Our Sports Store!
         </h1>
@@ -72,7 +72,7 @@ export default function Banner() {
         </p>
         <a
           href="#allequipments"
-          className="mt-3 inline-block rounded-2xl bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-3 py-1 font-semibold text-white transition-transform hover:scale-105 sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black"
+          className="bg-primary-0 mt-3 inline-block rounded-2xl px-3 py-1 font-semibold text-white transition-transform hover:scale-105 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3"
         >
           See more
         </a>

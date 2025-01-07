@@ -67,11 +67,11 @@ const CustomerReviews = () => {
       .catch((err) => toast.error(err.message));
   };
   return (
-    <section className="mx-auto mt-16 max-w-[1500px] px-5 md:my-16 md:mt-32">
-      <h2 className="mb-2 text-center text-2xl font-semibold text-white sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
+    <section className="mx-auto mt-16 max-w-[1500px] px-5 text-black md:my-16 md:mt-32">
+      <h2 className="text-primary-0 mb-2 text-center text-2xl font-semibold sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
         Customer Reviews
       </h2>
-      <p className="mb-4 text-center text-sm text-white text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">
+      <p className="mb-4 text-center text-sm text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">
         See what our customers are saying about their experience with our
         equipment!
       </p>
@@ -90,7 +90,7 @@ const CustomerReviews = () => {
           >
             {reviews.map((review, index) => (
               <SwiperSlide key={index}>
-                <div className="m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-white p-5 shadow-lg dark:bg-black sm:w-auto">
+                <div className="bg-primary-0 m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-opacity-30 p-5 shadow-lg dark:bg-black sm:w-auto">
                   <div className="mb-4 flex items-center">
                     <img
                       src={review.image}
@@ -99,16 +99,14 @@ const CustomerReviews = () => {
                     />
                     <div>
                       <h3 className="text-xl font-semibold">{review.name}</h3>
-                      <p className="text-sm text-gray-500">
-                        {review.profession}
-                      </p>
+                      <p className="text-sm">{review.profession}</p>
                     </div>
                   </div>
                   <div className="mb-4">
                     <h4 className="text-lg font-semibold">
                       {review.reviewed_product}
                     </h4>
-                    <p className="mt-2 text-gray-700">{review.review}</p>
+                    <p className="mt-2">{review.review}</p>
                   </div>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
@@ -124,7 +122,7 @@ const CustomerReviews = () => {
                         activeColor="#ffd700"
                       />
                     </div>
-                    <p className="text-sm text-gray-400">{review.date}</p>
+                    <p className="text-sm">{review.date}</p>
                   </div>
                 </div>
               </SwiperSlide>
@@ -133,7 +131,7 @@ const CustomerReviews = () => {
         </div>
         <button
           onClick={handleAddreview}
-          className={`btn ${reviewForm && "hidden"} h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:from-gray-800 dark:via-purple-900 dark:to-black`}
+          className={`btn ${reviewForm && "hidden"} bg-primary-0 hover:bg-primary-0 h-auto w-max transform rounded-lg py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:from-gray-800 dark:via-purple-900 dark:to-black`}
         >
           Add Your Review
         </button>
@@ -201,7 +199,7 @@ const CustomerReviews = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+              <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
                 Send This review
               </button>
             </div>

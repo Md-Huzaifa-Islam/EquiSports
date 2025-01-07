@@ -4,9 +4,11 @@ import { Fade } from "react-awesome-reveal";
 import { toast } from "react-toastify";
 import ReactStars from "react-rating-stars-component";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
   const [rating, setRating] = useState(0);
+  const navigate = useNavigate();
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
@@ -47,6 +49,7 @@ const AddEquipment = () => {
       .then(() => {
         toast.success("The equipment is added successfully");
         form.reset();
+        navigate("/myequipments");
       })
       .catch((err) => toast.error(err.message));
   };
@@ -56,9 +59,9 @@ const AddEquipment = () => {
       <Helmet>
         <title>{`Add Equipment | EquiSports`}</title>
       </Helmet>
-      <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl dark:bg-black">
+      <div className="w-full max-w-4xl rounded-lg bg-white p-8 text-black shadow-xl dark:bg-black">
         <Fade cascade triggerOnce>
-          <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">
+          <h2 className="mb-4 text-center text-2xl font-bold text-primary-0 sm:mb-8 sm:text-3xl">
             Add New Equipment
           </h2>
         </Fade>
@@ -69,9 +72,7 @@ const AddEquipment = () => {
         >
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Item Name
-              </span>
+              <span className="label-text dark:text-white">Item Name</span>
             </label>
             <input
               type="text"
@@ -84,9 +85,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Category Name
-              </span>
+              <span className="label-text dark:text-white">Category Name</span>
             </label>
             <input
               type="text"
@@ -99,9 +98,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Description
-              </span>
+              <span className="label-text dark:text-white">Description</span>
             </label>
             <input
               type="text"
@@ -114,9 +111,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Price
-              </span>
+              <span className="label-text dark:text-white">Price</span>
             </label>
             <input
               type="number"
@@ -129,9 +124,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Rating
-              </span>
+              <span className="label-text dark:text-white">Rating</span>
             </label>
             <ReactStars
               count={5}
@@ -146,9 +139,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Customization
-              </span>
+              <span className="label-text dark:text-white">Customization</span>
             </label>
             <input
               type="text"
@@ -161,7 +152,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
+              <span className="label-text dark:text-white">
                 Processing Time (Days)
               </span>
             </label>
@@ -176,9 +167,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Stock Status
-              </span>
+              <span className="label-text dark:text-white">Stock Status</span>
             </label>
             <input
               type="number"
@@ -191,9 +180,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Photo URL
-              </span>
+              <span className="label-text dark:text-white">Photo URL</span>
             </label>
             <input
               type="url"
@@ -205,7 +192,7 @@ const AddEquipment = () => {
           </div>
 
           <div className="form-control mt-6 sm:col-span-2">
-            <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+            <button className="btn h-auto w-full transform rounded-lg bg-primary-0 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
               Add This Equipment
             </button>
           </div>

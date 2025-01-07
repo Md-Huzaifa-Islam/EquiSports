@@ -74,10 +74,10 @@ const Login = () => {
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
           <div className="text-center md:mx-auto md:w-8/12 lg:mx-0 lg:w-1/2 lg:text-left">
-            <h1 className="mb-6 text-5xl font-extrabold text-white sm:mb-3 sm:text-4xl md:mb-6 md:text-5xl">
+            <h1 className="mb-6 text-5xl font-extrabold text-primary-0 sm:mb-3 sm:text-4xl md:mb-6 md:text-5xl">
               Welcome Back!
             </h1>
-            <p className="text-textLight md:text-lg">
+            <p className="md:text-lg">
               Sign in to your account and continue your journey with us. Access
               your personalized dashboard <br /> explore sports equipment, and
               more!
@@ -97,7 +97,7 @@ const Login = () => {
               className="card-body pb-0 dark:bg-black"
               onSubmit={handleSignIn}
             >
-              <h2 className="text-center text-3xl font-bold text-primary">
+              <h2 className="text-center text-3xl font-bold text-primary-0">
                 Login
               </h2>
               <div className="form-control mt-4">
@@ -135,19 +135,19 @@ const Login = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn rounded-full bg-primary text-white transition-colors duration-300 hover:bg-secondary dark:bg-[#275f5a]">
+                <button className="btn rounded-full bg-primary-0 text-white transition-colors duration-300 hover:bg-primary-0">
                   Login
                 </button>
               </div>
             </form>
 
             <div className="flex items-center justify-center py-4 dark:bg-black">
-              <p className="mx-2 text-xl font-bold text-primary">Or</p>
+              <p className="mx-2 text-xl font-bold">Or</p>
             </div>
 
             <div className="flex flex-col items-center pb-12 dark:bg-black">
               <button
-                className="flex items-center gap-2 rounded-full border border-primary bg-white px-6 py-2 text-primary shadow-sm transition-all duration-300 hover:bg-primary hover:text-white dark:bg-gray-700"
+                className="hover: flex items-center gap-2 rounded-full border border-primary-0 bg-white px-6 py-2 shadow-sm transition-all duration-300 dark:bg-gray-700"
                 onClick={handleSignInWithG}
               >
                 <FcGoogle size={24} />

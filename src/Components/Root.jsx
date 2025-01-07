@@ -9,9 +9,9 @@ const Root = () => {
   const { theme } = useContext(AuthContext);
   return (
     <>
-      <div className="flex min-h-screen flex-col justify-between bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 font-roboto dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+      <div className="bg-background-0 relative flex min-h-screen flex-col justify-between bg-opacity-50 font-roboto dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
         <div>
-          <header>
+          <header className="sticky top-0 z-[200]">
             <Navbar></Navbar>
           </header>
           <section>

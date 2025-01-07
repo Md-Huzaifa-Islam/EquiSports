@@ -55,17 +55,17 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="mx-auto mt-16 max-w-[1500px] px-5 md:my-16 md:mt-32">
-      <h2 className="mb-2 text-center text-2xl font-semibold text-white sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
+    <section className="mx-auto mt-16 max-w-[1500px] px-5 text-black md:my-16 md:mt-32">
+      <h2 className="text-primary-0 mb-2 text-center text-2xl font-semibold sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
         Frequently Asked Questions 🤔
       </h2>
-      <p className="mb-4 text-center text-sm text-white text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">
+      <p className="mb-4 text-center text-sm text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">
         Have questions? We’ve got answers. Check out our FAQs to find quick
         solutions to common inquiries.
       </p>
       <div className="grid gap-8 sm:grid-cols-2">
         <div className="">
-          <p className="mb-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+          <p className="mb-2 text-lg font-semibold sm:text-xl md:text-2xl">
             Answered Question:{" "}
           </p>
           <div className="grid gap-2">
@@ -74,7 +74,7 @@ const FaqSection = () => {
           </div>
         </div>
         <div className="">
-          <p className="mb-2 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+          <p className="mb-2 text-lg font-semibold sm:text-xl md:text-2xl">
             Previously asked question:{" "}
           </p>
           {/* past faqs  */}
@@ -86,20 +86,20 @@ const FaqSection = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-lg text-primary">
+              <p className="text-lg">
                 You haven&apos;t asked any question yet.
               </p>
             )}
           </div>
           {/* Have any question? */}
-          <p className="mb-2 mt-10 text-lg font-semibold text-white sm:text-xl md:text-2xl">
+          <p className="mb-2 mt-10 text-lg font-semibold sm:text-xl md:text-2xl">
             Have any question?
           </p>
 
           <form className="grid gap-4" onSubmit={handleSubmitFaq}>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-lg font-semibold text-white">
+                <span className="label-text text-lg font-semibold">
                   Question
                 </span>
               </label>
@@ -113,7 +113,7 @@ const FaqSection = () => {
             </div>
 
             <div className="form-control mt-3">
-              <button className="btn h-auto w-max transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+              <button className="bg-primary-0 hover:bg-primary-0 btn h-auto w-max transform rounded-lg py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
                 Send This question
               </button>
             </div>

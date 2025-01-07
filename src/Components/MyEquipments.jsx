@@ -54,13 +54,13 @@ const MyEquipments = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 px-5 py-6 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:py-12">
+    <div className="px-5 py-6 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:py-12">
       {/* header line part  */}
       <Helmet>
         <title>{`My Equipments | EquiSports`}</title>
       </Helmet>
-      <div className="mb-6 text-center text-white sm:mb-10">
-        <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">
+      <div className="mb-6 text-center text-black sm:mb-10">
+        <h2 className="text-2xl font-bold text-primary-0 sm:text-3xl md:text-4xl">
           My All Equipment
         </h2>
         <p className="mt-2 opacity-80 sm:mt-4">
@@ -69,39 +69,33 @@ const MyEquipments = () => {
         </p>
       </div>
 
-      <div className="grid gap-4 md:container sm:grid-cols-2 sm:gap-6 md:mx-auto md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:container sm:grid-cols-2 sm:gap-6 md:mx-auto md:grid-cols-2 lg:grid-cols-4">
         {equipments &&
-          equipments.map((equipment) => (
+          equipments.map((product) => (
             <div
-              key={equipment._id}
-              className="card mx-auto w-full max-w-sm border-2 border-blue-800 bg-white p-5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white dark:bg-black sm:mx-0 sm:max-w-md"
+              key={product._id}
+              className="card mx-auto w-full max-w-sm border-2 border-secondary-0 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white dark:bg-black sm:mx-0 sm:max-w-md"
             >
-              <figure className="h-60 rounded-xl bg-blue-800 dark:bg-[#22283C] sm:h-60 md:h-72">
+              <figure className="h-56 bg-white dark:bg-[#22283C] md:h-64">
                 <img
-                  src={equipment.image}
-                  alt={equipment.itemName}
+                  src={product.image}
+                  alt={product.itemName}
                   className="h-full object-contain object-center"
                 />
               </figure>
-              <div className="card-body p-4 px-2 pb-0">
-                <h2 className="card-title bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 bg-clip-text text-xl font-bold text-transparent dark:text-white">
-                  {equipment.itemName}
+              <div className="card-body rounded-b-2xl bg-primary-0 bg-opacity-25 p-4 px-2 pb-5">
+                <h2 className="card-title text-xl font-bold text-primary-0 dark:text-white">
+                  {product.itemName}
                 </h2>
-                <p className="text-base font-medium text-[#4F46E5]">
-                  Price:{" "}
-                  <span className="text-[#434C5B]">{equipment.price} $</span>
+                <p className="text-lg font-medium opacity-80">
+                  {product.price} $
                 </p>
-                <p className="text-base font-medium text-[#4F46E5]">
-                  Stock:{" "}
-                  <span className="text-[#434C5B]">
-                    {equipment.stockStatus} available
-                  </span>
-                </p>
-                <div className="flex w-max items-center gap-2 text-base font-medium text-[#4F46E5]">
-                  <p>Rating: </p>
-                  <span className="text-[#434C5B]">
+
+                <div className="flex items-center gap-2 text-base font-medium">
+                  <p className="flex-grow-0">{product.rating}</p>
+                  <span className="">
                     <ReactStars
-                      value={equipment.rating}
+                      value={product.rating}
                       count={5}
                       size={20}
                       edit={false}
@@ -115,20 +109,22 @@ const MyEquipments = () => {
                 </div>
                 <div className="mt-4 flex justify-between gap-2">
                   <Link
-                    to={`/detail/${equipment._id}`}
-                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-3 font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
+                    to={`/detail/${product._id}`}
+                    className="btn h-auto w-max transform rounded-lg bg-secondary-0 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
+                    text-primary-0
                   >
                     See Details
                   </Link>
                   <Link
-                    to={`/update/${equipment._id}`}
-                    className="btn h-auto transform rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-3 font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:via-purple-900 sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
+                    to={`/update/${product._id}`}
+                    className="btn h-auto w-max transform rounded-lg bg-secondary-0 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
+                    text-primary-0
                   >
                     Update
                   </Link>
                   <button
-                    onClick={() => handleDelete(equipment._id)}
-                    className="btn h-auto transform rounded-lg bg-red-700 px-4 py-3 font-semibold text-white hover:bg-red-900 hover:shadow-lg sm:w-max sm:px-[6px] sm:py-1 sm:text-base md:px-2 md:py-[6px] md:text-lg lg:px-2 lg:py-[6px]"
+                    onClick={() => handleDelete(product._id)}
+                    className="btn h-auto w-max transform rounded-lg bg-red-400 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
                   >
                     Delete
                   </button>

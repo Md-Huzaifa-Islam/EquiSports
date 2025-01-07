@@ -12,9 +12,9 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `relative bg-transparent transition-colors hover:text-hovertext ${
+            `relative bg-transparent transition-colors hover:text-secondary-0 ${
               isActive
-                ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                ? "text-white after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
                 : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
             }`
           }
@@ -26,9 +26,9 @@ const Navbar = () => {
         <NavLink
           to={"/allequipments"}
           className={({ isActive }) =>
-            `relative bg-transparent transition-colors hover:text-hovertext ${
+            `relative bg-transparent transition-colors hover:text-secondary-0 ${
               isActive
-                ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                ? "text-white after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
                 : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
             }`
           }
@@ -41,9 +41,9 @@ const Navbar = () => {
           <NavLink
             to={"/addequipments"}
             className={({ isActive }) =>
-              `relative bg-transparent transition-colors hover:text-hovertext ${
+              `relative bg-transparent transition-colors hover:text-secondary-0 ${
                 isActive
-                  ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                  ? "text-white after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
                   : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
               }`
             }
@@ -57,9 +57,9 @@ const Navbar = () => {
           <NavLink
             to={"/myequipments"}
             className={({ isActive }) =>
-              `relative bg-transparent transition-colors hover:text-hovertext ${
+              `relative bg-transparent transition-colors hover:text-secondary-0 ${
                 isActive
-                  ? "text-hovertext after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
+                  ? "text-white after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-white after:transition-transform after:duration-300 after:content-['']"
                   : "after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:content-[''] hover:after:scale-x-100"
               }`
             }
@@ -88,7 +88,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar z-10 mx-auto pt-5 text-white md:container">
+    <div className="navbar z-10 mx-auto bg-primary-0 py-2 text-white md:container">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
         <Link
           to={"/"}
-          className="btn btn-ghost hidden text-2xl hover:text-hovertext sm:inline-flex"
+          className="btn btn-ghost hidden text-2xl hover:text-white sm:inline-flex"
         >
           EquiSports
         </Link>
@@ -132,14 +132,14 @@ const Navbar = () => {
             data-tooltip-place="bottom"
             data-tooltip-id="my-name"
           >
-            <div className="w-10 rounded-full ring ring-primary ring-offset-2 ring-offset-base-100">
+            <div className="w-10 rounded-full ring ring-white ring-offset-2 ring-offset-base-100">
               <img src={user?.photoURL} />
             </div>
           </div>
 
           <Tooltip id="my-name" className="z-50" />
           <button
-            className="hover:bg-primary-dark btn bg-primary text-white"
+            className="hover:bg-primary-dark btn bg-secondary-0 text-white"
             onClick={handleSignOut}
           >
             Sign Out
@@ -189,13 +189,13 @@ const Navbar = () => {
         <div className="navbar-end gap-4">
           <Link
             to={"/login"}
-            className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            className="rounded-lg bg-secondary-0 px-4 py-2 hover:bg-secondary-0"
           >
             Login
           </Link>
           <Link
             to={"/register"}
-            className="rounded-lg bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600"
+            className="rounded-lg bg-secondary-0 px-4 py-2 hover:bg-secondary-0"
           >
             Register
           </Link>

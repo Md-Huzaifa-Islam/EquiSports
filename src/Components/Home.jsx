@@ -12,7 +12,7 @@ const Home = () => {
         <title>{`Home | EquiSports`}</title>
       </Helmet>
       {/* banner section  */}
-      <section className="px-5">
+      <section>
         <Banner></Banner>
       </section>
       {/* products section  */}

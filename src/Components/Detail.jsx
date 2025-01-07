@@ -7,19 +7,19 @@ const Detail = () => {
   const item = useLoaderData();
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 p-5 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:p-8">
+    <div className="p-5 text-black dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:p-8">
       {/* Header Section */}
       <Helmet>
         <title>{`${item.itemName} | EquiSports`}</title>
       </Helmet>
       <header className="mb-6 text-center sm:mb-10 md:mb-12">
         <Fade cascade triggerOnce>
-          <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+          <h1 className="text-2xl font-bold text-primary-0 sm:text-3xl md:text-4xl">
             Equipment Details
           </h1>
-          <p className="mt-2 text-sm text-gray-200 sm:text-base md:text-lg">
+          <p className="mt-2 text-sm sm:text-base md:text-lg">
             Discover the specifications of{" "}
-            <span className="font-bold">{item.itemName}</span>
+            <span className="font-bold text-primary-0">{item.itemName}</span>
           </p>
         </Fade>
       </header>
@@ -40,7 +40,7 @@ const Detail = () => {
         {/* Information Section */}
         <Fade cascade triggerOnce direction="right">
           <div className="w-full lg:w-1/2">
-            <h2 className="mb-3 text-2xl font-bold text-indigo-700 sm:mb-4 sm:text-3xl">
+            <h2 className="mb-3 whitespace-nowrap text-2xl font-bold text-indigo-700 sm:mb-4 sm:text-3xl">
               {item.itemName}
             </h2>
             <p className="mb-2 text-gray-700 dark:text-white sm:text-lg">

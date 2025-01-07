@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { toast } from "react-toastify";
 import ReactStars from "react-rating-stars-component";
@@ -7,10 +7,12 @@ import { Helmet } from "react-helmet-async";
 
 const UpdateEquipment = () => {
   const equipment = useLoaderData();
+  const navigate = useNavigate();
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
   const {
+    _id,
     image,
     itemName,
     categoryName,
@@ -63,6 +65,7 @@ const UpdateEquipment = () => {
       .then((res) => res.json())
       .then(() => {
         toast.success("Equipment updated successfully");
+        navigate(`/detail/${_id}`);
       })
       .catch((error) => {
         toast.error("Error updating equipment:", error);
@@ -76,8 +79,9 @@ const UpdateEquipment = () => {
       </Helmet>
       <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-xl dark:bg-black">
         <Fade cascade triggerOnce>
-          <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">
-            Update Equipment : <span className="underline">{itemName}</span>
+          <h2 className="mb-4 text-center text-2xl font-bold sm:mb-8 sm:text-3xl">
+            Update Equipment :{" "}
+            <span className="text-primary-0 underline">{itemName}</span>
           </h2>
         </Fade>
 
@@ -87,9 +91,7 @@ const UpdateEquipment = () => {
         >
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Item Name
-              </span>
+              <span className="label-text dark:text-white">Item Name</span>
             </label>
             <input
               type="text"
@@ -102,9 +104,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Category Name
-              </span>
+              <span className="label-text dark:text-white">Category Name</span>
             </label>
             <input
               type="text"
@@ -117,9 +117,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Description
-              </span>
+              <span className="label-text dark:text-white">Description</span>
             </label>
             <input
               type="text"
@@ -132,9 +130,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Price
-              </span>
+              <span className="label-text dark:text-white">Price</span>
             </label>
             <input
               type="number"
@@ -147,9 +143,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Rating
-              </span>
+              <span className="label-text dark:text-white">Rating</span>
             </label>
             <ReactStars
               count={5}
@@ -164,9 +158,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Customization
-              </span>
+              <span className="label-text dark:text-white">Customization</span>
             </label>
             <input
               type="text"
@@ -179,7 +171,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
+              <span className="label-text dark:text-white">
                 Processing Time (Days)
               </span>
             </label>
@@ -194,9 +186,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Stock Status
-              </span>
+              <span className="label-text dark:text-white">Stock Status</span>
             </label>
             <input
               type="number"
@@ -209,9 +199,7 @@ const UpdateEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                Photo URL
-              </span>
+              <span className="label-text dark:text-white">Photo URL</span>
             </label>
             <input
               type="url"
@@ -223,9 +211,7 @@ const UpdateEquipment = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                User Name
-              </span>
+              <span className="label-text dark:text-white">User Name</span>
             </label>
             <input
               type="url"
@@ -237,9 +223,7 @@ const UpdateEquipment = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text text-gray-700 dark:text-white">
-                User Email
-              </span>
+              <span className="label-text dark:text-white">User Email</span>
             </label>
             <input
               type="url"
@@ -251,7 +235,7 @@ const UpdateEquipment = () => {
           </div>
 
           <div className="form-control mt-6 sm:col-span-2">
-            <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+            <button className="btn h-auto w-full transform rounded-lg bg-primary-0 py-3 text-center text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
               Update This Equipment
             </button>
           </div>
