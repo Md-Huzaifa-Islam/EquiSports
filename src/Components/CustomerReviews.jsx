@@ -67,8 +67,8 @@ const CustomerReviews = () => {
       .catch((err) => toast.error(err.message));
   };
   return (
-    <section className="mx-auto mt-16 max-w-[1500px] px-5 text-black md:my-16 md:mt-32">
-      <h2 className="text-primary-0 mb-2 text-center text-2xl font-semibold sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
+    <section className="mx-auto mt-16 max-w-[1500px] px-5 text-black dark:text-white md:my-16 md:mt-32">
+      <h2 className="mb-2 text-center text-2xl font-semibold text-primary-0 dark:text-white sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
         Customer Reviews
       </h2>
       <p className="mb-4 text-center text-sm text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">
@@ -90,7 +90,7 @@ const CustomerReviews = () => {
           >
             {reviews.map((review, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-primary-0 m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-opacity-30 p-5 shadow-lg dark:bg-black sm:w-auto">
+                <div className="dark:bg-darkPrimary-0 m-4 mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-primary-0 bg-opacity-30 p-5 shadow-lg sm:w-auto">
                   <div className="mb-4 flex items-center">
                     <img
                       src={review.image}
@@ -131,15 +131,15 @@ const CustomerReviews = () => {
         </div>
         <button
           onClick={handleAddreview}
-          className={`btn ${reviewForm && "hidden"} bg-primary-0 hover:bg-primary-0 h-auto w-max transform rounded-lg py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:from-gray-800 dark:via-purple-900 dark:to-black`}
+          className={`btn ${reviewForm && "hidden"} dark:bg-darkPrimary-0 h-auto w-max transform rounded-lg bg-primary-0 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg`}
         >
           Add Your Review
         </button>
         <div
-          className={`relative w-full max-w-sm rounded-lg bg-white p-8 shadow-xl ${reviewForm || "hidden"}`}
+          className={`relative w-full max-w-sm rounded-lg bg-white p-8 shadow-xl dark:bg-black ${reviewForm || "hidden"}`}
         >
           <Fade cascade triggerOnce>
-            <h2 className="mb-4 text-center text-2xl font-bold text-indigo-700 sm:mb-8 sm:text-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold text-primary-0 sm:mb-8 sm:text-3xl">
               Review sender
             </h2>
           </Fade>
@@ -147,7 +147,9 @@ const CustomerReviews = () => {
           <form className="grid gap-4" onSubmit={handleSendreview}>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-700">Item Name</span>
+                <span className="label-text text-gray-700 dark:text-white">
+                  Item Name
+                </span>
               </label>
               <input
                 type="text"
@@ -160,7 +162,9 @@ const CustomerReviews = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-700">Profession</span>
+                <span className="label-text text-gray-700 dark:text-white">
+                  Profession
+                </span>
               </label>
               <input
                 type="text"
@@ -172,7 +176,9 @@ const CustomerReviews = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-700">Rating</span>
+                <span className="label-text text-gray-700 dark:text-white">
+                  Rating
+                </span>
               </label>
               <ReactStars
                 count={5}
@@ -187,7 +193,9 @@ const CustomerReviews = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-gray-700">Review</span>
+                <span className="label-text text-gray-700 dark:text-white">
+                  Review
+                </span>
               </label>
               <input
                 type="text"
@@ -199,7 +207,7 @@ const CustomerReviews = () => {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn h-auto w-full transform rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 py-3 text-lg font-semibold transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+              <button className="btn h-auto w-full transform rounded-lg bg-primary-0 bg-gradient-to-r py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg">
                 Send This review
               </button>
             </div>

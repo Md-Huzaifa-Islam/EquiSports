@@ -54,13 +54,13 @@ const MyEquipments = () => {
   };
 
   return (
-    <div className="px-5 py-6 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:py-12">
+    <div className="px-5 py-6 sm:py-12">
       {/* header line part  */}
       <Helmet>
         <title>{`My Equipments | EquiSports`}</title>
       </Helmet>
-      <div className="mb-6 text-center text-black sm:mb-10">
-        <h2 className="text-2xl font-bold text-primary-0 sm:text-3xl md:text-4xl">
+      <div className="mb-6 text-center text-black dark:text-white sm:mb-10">
+        <h2 className="text-2xl font-bold text-primary-0 dark:text-white sm:text-3xl md:text-4xl">
           My All Equipment
         </h2>
         <p className="mt-2 opacity-80 sm:mt-4">
@@ -69,21 +69,21 @@ const MyEquipments = () => {
         </p>
       </div>
 
-      <div className="grid gap-4 md:container sm:grid-cols-2 sm:gap-6 md:mx-auto md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 md:container sm:grid-cols-2 sm:gap-6 md:mx-auto lg:grid-cols-3 xl:grid-cols-4">
         {equipments &&
           equipments.map((product) => (
             <div
               key={product._id}
-              className="card mx-auto w-full max-w-sm border-2 border-secondary-0 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white dark:bg-black sm:mx-0 sm:max-w-md"
+              className="border-secondary dark:border-darkSecondary-0 card mx-auto w-full max-w-sm border-2 transition-shadow duration-200 hover:shadow-2xl hover:shadow-white sm:mx-0 sm:max-w-md"
             >
-              <figure className="h-56 bg-white dark:bg-[#22283C] md:h-64">
+              <figure className="h-56 bg-white dark:bg-transparent md:h-64">
                 <img
                   src={product.image}
                   alt={product.itemName}
                   className="h-full object-contain object-center"
                 />
               </figure>
-              <div className="card-body rounded-b-2xl bg-primary-0 bg-opacity-25 p-4 px-2 pb-5">
+              <div className="dark:bg-darkPrimary-0 card-body rounded-b-2xl bg-primary-0 bg-opacity-25 p-4 px-2 pb-5">
                 <h2 className="card-title text-xl font-bold text-primary-0 dark:text-white">
                   {product.itemName}
                 </h2>
@@ -107,24 +107,26 @@ const MyEquipments = () => {
                     />
                   </span>
                 </div>
-                <div className="mt-4 flex justify-between gap-2">
+                <div className="mt-4 flex flex-wrap justify-between gap-2">
                   <Link
                     to={`/detail/${product._id}`}
-                    className="btn h-auto w-max transform rounded-lg bg-secondary-0 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
-                    text-primary-0
+                    className="dark:bg-darkSecondary-0 btn h-auto w-max transform rounded-lg bg-secondary-0 px-2 py-3 text-lg font-semibold text-white hover:shadow-lg"
+                    text-primary
+                    dark:text-darkPrimary-0
                   >
                     See Details
                   </Link>
                   <Link
                     to={`/update/${product._id}`}
-                    className="btn h-auto w-max transform rounded-lg bg-secondary-0 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
-                    text-primary-0
+                    className="dark:bg-darkSecondary-0 btn h-auto w-max transform rounded-lg bg-secondary-0 px-2 py-3 text-lg font-semibold text-white hover:shadow-lg"
+                    text-primary
+                    dark:text-darkPrimary-0
                   >
                     Update
                   </Link>
                   <button
                     onClick={() => handleDelete(product._id)}
-                    className="btn h-auto w-max transform rounded-lg bg-red-400 py-3 text-lg font-semibold text-white hover:shadow-lg dark:from-gray-800 dark:to-black"
+                    className="btn h-auto w-max transform rounded-lg bg-red-400 px-2 py-3 text-lg font-semibold text-white hover:shadow-lg"
                   >
                     Delete
                   </button>

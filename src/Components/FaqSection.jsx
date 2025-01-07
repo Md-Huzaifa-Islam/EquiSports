@@ -55,8 +55,8 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="mx-auto mt-16 max-w-[1500px] px-5 text-black md:my-16 md:mt-32">
-      <h2 className="text-primary-0 mb-2 text-center text-2xl font-semibold sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
+    <section className="mx-auto mt-16 max-w-[1500px] px-5 text-black dark:text-white md:my-16 md:mt-32">
+      <h2 className="mb-2 text-center text-2xl font-semibold text-primary-0 dark:text-white sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
         Frequently Asked Questions 🤔
       </h2>
       <p className="mb-4 text-center text-sm text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">
@@ -113,7 +113,7 @@ const FaqSection = () => {
             </div>
 
             <div className="form-control mt-3">
-              <button className="bg-primary-0 hover:bg-primary-0 btn h-auto w-max transform rounded-lg py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+              <button className="dark:bg-darkPrimary-0 btn h-auto w-max transform rounded-lg bg-primary-0 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg">
                 Send This question
               </button>
             </div>

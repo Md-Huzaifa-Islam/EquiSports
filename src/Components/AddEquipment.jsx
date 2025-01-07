@@ -61,7 +61,7 @@ const AddEquipment = () => {
       </Helmet>
       <div className="w-full max-w-4xl rounded-lg bg-white p-8 text-black shadow-xl dark:bg-black">
         <Fade cascade triggerOnce>
-          <h2 className="mb-4 text-center text-2xl font-bold text-primary-0 sm:mb-8 sm:text-3xl">
+          <h2 className="mb-4 text-center text-2xl font-bold text-primary-0 dark:text-white sm:mb-8 sm:text-3xl">
             Add New Equipment
           </h2>
         </Fade>
@@ -72,7 +72,7 @@ const AddEquipment = () => {
         >
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Item Name</span>
+              <span className="label-text">Item Name</span>
             </label>
             <input
               type="text"
@@ -85,7 +85,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Category Name</span>
+              <span className="label-text">Category Name</span>
             </label>
             <input
               type="text"
@@ -98,7 +98,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Description</span>
+              <span className="label-text">Description</span>
             </label>
             <input
               type="text"
@@ -111,7 +111,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Price</span>
+              <span className="label-text">Price</span>
             </label>
             <input
               type="number"
@@ -124,7 +124,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Rating</span>
+              <span className="label-text">Rating</span>
             </label>
             <ReactStars
               count={5}
@@ -139,7 +139,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Customization</span>
+              <span className="label-text">Customization</span>
             </label>
             <input
               type="text"
@@ -152,9 +152,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">
-                Processing Time (Days)
-              </span>
+              <span className="label-text">Processing Time (Days)</span>
             </label>
             <input
               type="number"
@@ -167,7 +165,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Stock Status</span>
+              <span className="label-text">Stock Status</span>
             </label>
             <input
               type="number"
@@ -180,7 +178,7 @@ const AddEquipment = () => {
 
           <div className="form-control">
             <label className="label">
-              <span className="label-text dark:text-white">Photo URL</span>
+              <span className="label-text">Photo URL</span>
             </label>
             <input
               type="url"
@@ -192,7 +190,7 @@ const AddEquipment = () => {
           </div>
 
           <div className="form-control mt-6 sm:col-span-2">
-            <button className="btn h-auto w-full transform rounded-lg bg-primary-0 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+            <button className="dark:bg-darkPrimary-0 btn h-auto w-full transform rounded-lg bg-primary-0 py-3 text-lg font-semibold text-white transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-primary-0 hover:text-xl hover:font-bold hover:shadow-lg">
               Add This Equipment
             </button>
           </div>

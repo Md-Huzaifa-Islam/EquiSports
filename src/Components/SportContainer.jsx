@@ -18,8 +18,8 @@ const SportContainer = () => {
       .then((data) => setCategories(data));
   }, []);
   return (
-    <section className="mx-auto max-w-[1500px] px-5 text-black sm:mt-0 md:my-16">
-      <h2 className="text-primary-0 mb-2 text-center text-2xl font-semibold sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
+    <section className="mx-auto max-w-[1500px] px-5 text-black dark:text-white sm:mt-0 md:my-16">
+      <h2 className="mb-2 text-center text-2xl font-semibold text-primary-0 dark:text-white sm:mb-2 sm:text-3xl md:mb-4 md:text-4xl">
         Sports Category
       </h2>
       <p className="mb-4 text-center text-sm text-opacity-80 sm:mb-4 sm:text-base md:mb-8 md:text-lg">

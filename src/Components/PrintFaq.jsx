@@ -5,7 +5,7 @@ const PrintFaq = ({ faq }) => {
   return (
     <div
       tabIndex={0}
-      className="bg-primary-0 collapse collapse-arrow border border-white bg-opacity-40"
+      className="bg-primary dark:bg-darkPrimary-0 collapse collapse-arrow border border-white bg-opacity-40"
     >
       <div className="collapse-title text-xl font-medium">{question}</div>
       <div className="collapse-content">

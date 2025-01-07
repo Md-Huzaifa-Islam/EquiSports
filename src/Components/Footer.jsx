@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <footer className="bg-secondary-0 mt-12 border-t-2 border-white bg-opacity-10 py-12 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black">
+    <footer className="mt-12 border-t-2 border-white bg-secondary-0 bg-opacity-10 py-12 dark:bg-transparent">
       <div className="container mx-auto px-5">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -28,7 +28,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/"}
-                    className="text-primary-0 hover:text-secondary-0 transition"
+                    className="text-primary-0 transition hover:text-secondary-0"
                   >
                     Home
                   </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
                 <li>
                   <Link
                     to={"/allequipments"}
-                    className="text-primary-0 hover:text-secondary-0 transition"
+                    className="text-primary-0 transition hover:text-secondary-0"
                   >
                     All equipments
                   </Link>
@@ -44,7 +44,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-primary-0 hover:text-secondary-0 transition"
+                    className="text-primary-0 transition hover:text-secondary-0"
                   >
                     Back to top
                   </a>

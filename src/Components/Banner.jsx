@@ -72,7 +72,7 @@ export default function Banner() {
         </p>
         <a
           href="#allequipments"
-          className="bg-primary-0 mt-3 inline-block rounded-2xl px-3 py-1 font-semibold text-white transition-transform hover:scale-105 dark:bg-gradient-to-r dark:from-gray-800 dark:via-purple-900 dark:to-black sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3"
+          className="dark:bg-darkPrimary-0 mt-3 inline-block rounded-2xl bg-primary-0 px-3 py-1 font-semibold text-white transition-transform hover:scale-105 sm:mt-5 sm:rounded-full sm:px-6 sm:py-2 md:px-8 lg:py-3"
         >
           See more
         </a>

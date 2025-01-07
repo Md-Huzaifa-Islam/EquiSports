@@ -88,7 +88,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar z-10 mx-auto bg-primary-0 py-2 text-white md:container">
+    <div className="navbar z-10 mx-auto py-2 text-white md:container">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -139,7 +139,7 @@ const Navbar = () => {
 
           <Tooltip id="my-name" className="z-50" />
           <button
-            className="hover:bg-primary-dark btn bg-secondary-0 text-white"
+            className="hover:bg-primary dark:bg-darkPrimary-dark dark:bg-darkSecondary-0 btn bg-secondary-0 text-white"
             onClick={handleSignOut}
           >
             Sign Out
@@ -189,13 +189,13 @@ const Navbar = () => {
         <div className="navbar-end gap-4">
           <Link
             to={"/login"}
-            className="rounded-lg bg-secondary-0 px-4 py-2 hover:bg-secondary-0"
+            className="hover:bg-secondary dark:bg-darkSecondary-0 rounded-lg bg-secondary-0 px-4 py-2"
           >
             Login
           </Link>
           <Link
             to={"/register"}
-            className="rounded-lg bg-secondary-0 px-4 py-2 hover:bg-secondary-0"
+            className="hover:bg-secondary dark:bg-darkSecondary-0 rounded-lg bg-secondary-0 px-4 py-2"
           >
             Register
           </Link>

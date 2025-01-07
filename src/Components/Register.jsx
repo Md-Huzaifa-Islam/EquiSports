@@ -71,11 +71,11 @@ const Register = () => {
       <Helmet>
         <title>{`Register | EquiSports`}</title>
       </Helmet>
-      <div className="flex w-11/12 flex-col items-center justify-between gap-12 text-black sm:gap-6 md:gap-12 lg:flex-row">
+      <div className="flex w-11/12 flex-col items-center justify-between gap-12 text-black dark:text-white sm:gap-6 md:gap-12 lg:flex-row">
         {/* Left Section */}
         <Slide direction="left" duration={800} triggerOnce>
           <div className="text-center md:mx-auto md:w-8/12 lg:mx-0 lg:w-1/2 lg:text-left">
-            <h1 className="mb-6 text-5xl font-extrabold text-primary-0 sm:mb-3 sm:text-3xl md:mb-6 lg:text-5xl">
+            <h1 className="mb-6 text-5xl font-extrabold text-primary-0 dark:text-white sm:mb-3 sm:text-3xl md:mb-6 lg:text-5xl">
               Join Us Today!
             </h1>
             <p className="md:text-lg">
@@ -94,7 +94,7 @@ const Register = () => {
         >
           <div className="card w-full rounded-lg bg-white p-8 shadow-lg dark:bg-black">
             <form className="card-body pb-0" onSubmit={handleSignUpEmail}>
-              <h2 className="mb-6 text-center text-3xl font-bold text-primary-0">
+              <h2 className="mb-6 text-center text-3xl font-bold text-primary-0 dark:text-white">
                 Create an Account
               </h2>
 
@@ -165,7 +165,7 @@ const Register = () => {
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn rounded-full bg-primary-0 text-white transition-colors duration-300 hover:bg-primary-0 dark:bg-[#275f5a]">
+                <button className="btn rounded-full bg-primary-0 text-white transition-colors duration-300 hover:bg-primary-0">
                   Register
                 </button>
               </div>
@@ -177,7 +177,7 @@ const Register = () => {
 
             <div className="mb-4 flex flex-col items-center">
               <button
-                className="flex items-center gap-2 rounded-full border border-primary-0 bg-white px-6 py-2 shadow-sm transition-all duration-300 dark:bg-gray-700"
+                className="flex items-center gap-2 rounded-full border border-primary-0 bg-white px-6 py-2 shadow-sm transition-all duration-300 dark:bg-black"
                 onClick={() => {
                   signInWithGmail()
                     .then((p) => {
